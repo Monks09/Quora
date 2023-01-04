@@ -14,3 +14,4 @@ src-
                   -Homeactions.js
                   -Homeredusers.js
     
+following this file structure
