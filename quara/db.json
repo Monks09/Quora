@@ -1,0 +1,233 @@
+{
+  "users": [
+    {
+      "userid": 1,
+      "username": "Mayank Sharma",
+      "following_topics": ["Sports", "Movies", "Technology"],
+      "following_channels": []
+    },
+    {
+      "userid": 2,
+      "username": "Nitesh Lanjewar",
+      "following_topics": ["Movies", "Health", "Technology"],
+      "following_channels": []
+    },
+    {
+      "userid": 3,
+      "username": "Roshan Kumar",
+      "following_topics": ["Health", "Science", "Sports"],
+      "following_channels": []
+    },
+    {
+      "userid": 4,
+      "username": "Bhaskar Ganesh Naik",
+      "following_topics": ["Technology", "Sports", "Science"],
+      "following_channels": []
+    },
+    {
+      "userid": 5,
+      "username": "Nagendra Dangi",
+      "following_topics": ["Movies", "Science", "Health"],
+      "following_channels": []
+    }
+  ],
+
+  "posts": [
+    {
+      "postid": 1,
+      "username": "Roshan Kumar",
+      "user_desc": "Sports Enthusiast",
+      "title": "The Italian sport press is arguing that the current Juventus team is the weakest in the last nine years. Do you agree? Why or why not?",
+      "description": "I agree 100%. Maurizio Sarri did a poor job this season with Juventus, but the squad he had on his hands certainly didn’t help him. Getting Aaron Ramsey on a free transfer, and treating this acquisition like a world-class signing should say everything about Juventus’ previous transfer window. The lack of ideas on the pitch can be attributed to Sarri’s poor tactics and lack of ability to adapt when needed. But everything else is just poor management from the team’s front office.The way I see it, Juventus bought Cristiano Ronaldo in 2018, and thought that they are going to be automatic UEFA Champions League winners, because of it. Unfortunately, they didn’t study enough tape of Cristiano from his Real Madrid days, to realize that the main reason why the Spanish club was so successful with Cristiano is because they had some great play-makers in that squad. Juventus doesn’t have a Toni Kroos. Doesn’t have a Luka Modric, or a Karim Benzema. Hell, I would argue that they don’t even have a Gareth Bale or an Isco. Ronaldo can win games on his own from time to time, but at this stage of his career he needs help to go all the way, and Juventus didn’t provide him that help. You can’t hope to win Champions League with an old Gonzalo Higuain, an inconsistent Costa or a midfield comprised of Rabiot and an unmotivated Miralem Pjanic. You need more than that. Hopefully, Juventus’s front office will realize this in the upcoming transfer window.",
+      "date": "2y",
+      "category": "Sports",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-bf5992f3150029ed554dc666b2dbb76e",
+      "views": "43k",
+      "upvotes": "678",
+      "comments": "20",
+      "shares": "33"
+    },
+    {
+      "postid": 2,
+      "username": "Mayank Sharma",
+      "user_desc": "Sports lover and enthusiast",
+      "title": "What Olympians have tried to sell their gold medals?",
+      "description": "After Greg Louganis captured double Olympic gold for 3m springboard & 10m platform in Los Angeles in 1984—a feat he repeated four years later in Seoul—he was acclaimed as the greatest diver in history. Winning the gold does not guarantee a life of luxury. Financial woes left the champion facing foreclosure on his California home. By 2012, things were so dire, he turned to an auction house specializing in Olympic memorabilia. Louganis wanted $100 grand for each medal. The auctioneer told Louganis that she didn’t think she could sell them for that amount of money. Nowadays, $100,000 would be easy money. Louganis sold his home rather than give up his gold, but, it’s still shocking.",
+      "date": "1y",
+      "category": "Sports",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-a1e0129fbb5221ddd676a6171af5a19d-lq",
+      "views": "244.7K",
+      "upvotes": "1.6K",
+      "comments": "34",
+      "shares": "36"
+    },
+    {
+      "postid": 3,
+      "username": "Bhaskar Ganesh Naik",
+      "user_desc": "World cup follower",
+      "title": "Mbappé’s astonishing performance further confirmed in the World Cup 2022, do you agree?",
+      "description": "He deserved the golden boot. Played very well. like a champion. In fact, while I cheered for Argentina on one hand, internally I had sympathy for him too..This picture reminded me how in the moment of defeat, having a leader who stands by you can make any loss feel like a learning...",
+      "date": "Dec 20",
+      "category": "Sports",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-e44cd03c7b863bf49b42fca18f8e9079",
+      "views": "6.9K",
+      "upvotes": "61",
+      "comments": "10",
+      "shares": "4"
+    },
+    {
+      "postid": 4,
+      "username": "Nagendra Dangi",
+      "user_desc": "Soccer Enthusiast",
+      "title": "What does “G.O.A.T” mean in football?",
+      "description": "If you're not familiar with sport, the term may come as a bit of a conundrum to you, but rest assured, it does not refer to a farmyard animal. Those who use social media may have happened across the term 'GOAT' being used in association with the best sports starts in the world. Roger Federer, Usain Bolt, Tom Brady and LeBron James are just some of the names that have been branded the GOAT. The likes of Lionel Messi and Cristiano Ronaldo are also regularly present on similar lists of elite-level athletes. What does GOAT mean? GOAT (or G.O.A.T.) is an acronym which stands for 'greatest of all time'. It is a tag which is reserved for the individual who is deemed to be the undisputed master of their sport. As well as exceptional talent, in order to be considered the GOAT, the individual must also maintain a consistent high level of achievement. While it has been in use for a long time, the term was popularized in the 20th century by heavyweight boxing champion Muhammad Ali, who, in 1964, declared himself 'the greatest' after defeating Sonny Liston. It subsequently became a moniker for Ali throughout his career and he famously revisited the catchphrase after defeating George Foreman by knockout, against the odds, in 1974. As the name suggests, the GOAT is not only deemed to be better than all of their contemporaries, but better than everyone who has gone before them as well.",
+      "date": "Dec 22",
+      "category": "Sports",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-9aa3188df7992a224e5c583a1b868c0c",
+      "views": "5.9K",
+      "upvotes": "5",
+      "comments": "3",
+      "shares": "2"
+    },
+    {
+      "postid": 5,
+      "username": "Nitesh Lanjewar",
+      "user_desc": "Science Lover",
+      "title": "What is the scientific name of water?",
+      "description": "The scientific name of water is H2O. The 'H' stands for hydrogen and the 'O' stands for oxygen, which are the two elements that make up water. Water is a chemical compound that is composed of two hydrogen atoms bonded to one oxygen atom. It is a transparent, tasteless, and odorless liquid that is essential for all known forms of life.",
+      "date": "Tue",
+      "category": "Science",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-98363457416f65acbd5ca76f4f3ea5d0-lq",
+      "views": "13",
+      "upvotes": "5",
+      "comments": "3",
+      "shares": "1"
+    },
+    {
+      "postid": 6,
+      "username": "Bhaskar Ganesh Naik",
+      "user_desc": "Science Facts Explorer",
+      "title": "What is your scientific fact of the day 465?",
+      "description": "Did you know? This situation is rare and not heard of often. Having an extra pair of legs and organ parts truly makes you a special person. The spider lady many labelled her. She found love and so happy for her. Living in this condition makes life very challenging.",
+      "date": "Dec 29",
+      "category": "Science",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-597997598346addcc3e87e26cb333a27-lq",
+      "views": "109.5K",
+      "upvotes": "130",
+      "comments": "17",
+      "shares": "2"
+    },
+    {
+      "postid": 7,
+      "username": "Nagendra Dangi",
+      "user_desc": "Science Explorer",
+      "title": "What are some amazing science facts which can get 886644k views?",
+      "description": "Here is some interesting facts.",
+      "date": "Sat",
+      "category": "Science",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-eb33c7ee0bd5b05880fd599034349209-lq",
+      "views": "8.3K",
+      "upvotes": "100",
+      "comments": "1",
+      "shares": "1"
+    },
+    {
+      "postid": 8,
+      "username": "Mayank Sharma",
+      "user_desc": "Science Enthusiast",
+      "title": "If scientists say the universe will end in 5 billion years, but we can see galaxies 12 billion light years away, has the universe already ended?",
+      "description": "No, the universe has not already ended. The prediction that the universe will end in about 5 billion years is based on our current understanding of the way the universe is expanding and the way that energy is distributed throughout the universe. The fact that we can see galaxies that are 12 billion light years away does not contradict this prediction, because the light from these galaxies has taken a very long time to reach us. It is estimated that the universe is about 13.8 billion years old, so the light from these distant galaxies has been traveling through space for most of the history of the universe. It is important to note that the prediction that the universe will end in about 5 billion years is based on certain assumptions and is not a certain outcome. There are still many mysteries about the nature of the universe that scientists are working to understand, and it is possible that our understanding of the universe may change as we learn more about it.",
+      "date": "Dec 29",
+      "category": "Science",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-439e0efb33429b3d20579be093c8e8c0-pjlq",
+      "views": "18.6K",
+      "upvotes": "64",
+      "comments": "9",
+      "shares": "1"
+    },
+    {
+      "postid": 9,
+      "username": "Nitesh Lanjewar",
+      "user_desc": "Health Freak",
+      "title": "What is the best way to take care of myself as I age?",
+      "description": "The best way to take care of yourself as you age is to stop aging. Sounds odd? aging is damage and nothing else. It’s hard to reverse it but to prevent more damage is easy. Stop eating only what pleases your taste, stop hindering waste excretion and storing it all in your body. It’s waste that ages people. So stop “wasting” your body and give it a lot of bile to remove the toxic waste.",
+      "date": "Dec 29",
+      "category": "Health",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-6cb76a6de6570ce1e68d353b0bb30465",
+      "views": "85.3K",
+      "upvotes": "90",
+      "comments": "11",
+      "shares": "3"
+    },
+    {
+      "postid": 10,
+      "username": "Roshan Kumar",
+      "user_desc": "Health and Diet expert",
+      "title": "How does the ketogenic diet work?",
+      "description": "The ketogenic diet works by drastically reducing carbohydrate intake and replacing it with fat. This causes the body to enter a state of ketosis, where it begins to burn fat for fuel instead of carbohydrates. Normally, the body gets energy from glucose, which is a type of sugar that is found in carbohydrates. When you eat foods that are high in carbohydrates, your body breaks down the carbohydrates into glucose, which is then used for energy. However, when you follow a ketogenic diet and significantly reduce your carbohydrate intake, your body does not have enough glucose to use for energy. As a result, it starts to break down fat into molecules called ketones, which can be used for energy. The goal of the ketogenic diet is to get the body into a state of ketosis, where it is burning fat for fuel instead of glucose. This can lead to a reduction in body weight, body fat, and waist circumference. However, it is important to note that the ketogenic diet may not be suitable for everyone, and it is not a long-term solution for weight loss. It is important to speak with a healthcare provider before starting any new diet.",
+      "date": "Sun",
+      "category": "Health",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-6e8c4f10667b06521b75cd446f49df35-lq",
+      "views": "11K",
+      "upvotes": "39",
+      "comments": "14",
+      "shares": "6"
+    },
+    {
+      "postid": 11,
+      "username": "Nagendra Dangi",
+      "user_desc": "Movies Lover",
+      "title": "What are some screenshots deserves 800k views?",
+      "description": "Funny spiderman meme",
+      "date": "Mon",
+      "category": "Movies",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-6ac14f40ca8994f8f0287b187f978e86",
+      "views": "2.4K",
+      "upvotes": "389",
+      "comments": "3",
+      "shares": "1"
+    },
+    {
+      "postid": 12,
+      "username": "Bhaskar Ganesh Naik",
+      "user_desc": "Movies Lover",
+      "title": "How can you tell if a movie scene is CGI?",
+      "description": "If you can't, the CGI is a complete success. Even some of the naysayers are clueless. Years ago, a Los Angeles critic applauded actor Aaron Eckhardt's portrayal as 'Two Face' in a Batman film. According to the critic, the macabre make-up was scary while yet eliciting sympathy for the maimed thief. So, what do you know? Other than the reference points on Aaron's face for a CGI job, no make-up was applied.",
+      "date": "Mon",
+      "category": "Movies",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-e02e73c5c3adc58bea4b0578c2402c93-lq",
+      "views": "1.7K",
+      "upvotes": "26",
+      "comments": "1",
+      "shares": "1"
+    },
+    {
+      "postid": 13,
+      "username": "Nitesh Lanjewar",
+      "user_desc": "Tech Enthusiast",
+      "title": "What are your thoughts and opinions about technology?",
+      "description": "Tech Fact",
+      "date": "Aug 3",
+      "category": "Technology",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-f34fe455bced2c311562b84e609c21be",
+      "views": "4.9K",
+      "upvotes": "47",
+      "comments": "25",
+      "shares": "16"
+    },
+    {
+      "postid": 14,
+      "username": "Bhaskar Ganesh Naik",
+      "user_desc": "Tech Enthusiast",
+      "title": "What do you think technology will look like after 20 years?",
+      "description": "Many things will be different after 20 years. People will be using smart phones with screens that are almost an inch thick. They will be using computers that are even larger. Many people will be using robots as their servants. There will be many people living in space colonies. We will also have a lot more communication with one another. Technology will continue to grow and evolve. Technology has improved over the years, but it will continue to improve. Computers are getting faster and smarter. We are seeing more and more devices connecting to the internet. Cell phones are smaller and lighter. Smart watches are becoming more and more popular.",
+      "date": "Dec 1",
+      "category": "Technology",
+      "image": "https://qph.cf2.quoracdn.net/main-qimg-60a7a64815baeeace72ee5b3135eb16f-lq",
+      "views": "3.0K",
+      "upvotes": "63",
+      "comments": "17",
+      "shares": "6"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: grey;
+}
+.SinglePost {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px;
+  z-index: 10000;
+}
+.SinglePost-head {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.SinglePost-head > img {
+  border-radius: 50%;
+}
+.follow {
+  color: #00bcd4;
+  margin-left: 15px;
+}
+.black {
+  color: black;
+  font-weight: bolder;
+}
+.SinglePost-tail button {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.SinglePost-tail > span {
+  margin: 0 10px;
+}
