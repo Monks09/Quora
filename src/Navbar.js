@@ -15,27 +15,25 @@ function Navbar() {
   const [inputUrl, setInputUrl] = useState("");
   return (
     <div className="qHeader">
-      <div className="qHeader__logo">
+      
+        <Link className ='qHeader__logo' to = {'/'}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
           alt=""
         />
-      </div>
+         </Link>
+       
       <div className="qHeader__icons">
             <Link className="active qHeader__icon" to={'/'}><Home /></Link>
         
             <Link className="qHeader__icon"  to={'/following'}> <ArticleIcon /></Link>
-         
 
-        <div className="qHeader__icon">
-          <AssignmentTurnedInIcon />
-        </div>
-        <div className="qHeader__icon">
-          <PeopleAltIcon />
-        </div>
-        <div className="qHeader__icon">
-          <NotificationsNoneIcon />
-        </div>
+            <Link className="qHeader__icon"  to={'/answer'}> <AssignmentTurnedInIcon /></Link>
+
+            <Link className="qHeader__icon"  to={'/'}> <PeopleAltIcon /></Link>
+            
+            <Link className="qHeader__icon"  to={'/'}> <NotificationsNoneIcon /></Link>
+        
       </div>
       <div className="qHeader__input">
         <SearchIcon />
