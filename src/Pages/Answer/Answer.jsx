@@ -12,7 +12,7 @@ export default function Answer() {
 
   useEffect(() => {
     dispatch(answerThunkActionCreater(" http://localhost:3000/questions"));
-  });
+  },[dispatch]);
 
   return (
     <div className={styles.Answer}>

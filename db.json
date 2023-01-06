@@ -5,7 +5,11 @@
       "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512",
       "email": "mayank@gmail.com",
       "password": "may123",
-      "following_topics": ["Sports", "Movies", "Technology"],
+      "following_topics": [
+        "Sports",
+        "Movies",
+        "Technology"
+      ],
       "following_channels": [],
       "login": false
     },
@@ -14,7 +18,11 @@
       "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U03NTNWQECW-9ff071da60e4-512",
       "email": "nitesh@gmail.com",
       "password": "nit123",
-      "following_topics": ["Movies", "Health", "Technology"],
+      "following_topics": [
+        "Movies",
+        "Health",
+        "Technology"
+      ],
       "following_channels": [],
       "login": false
     },
@@ -24,7 +32,11 @@
       "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U03P2SSKSMN-8eb12ca464b0-512",
       "email": "roshan@gmail.com",
       "password": "ros123",
-      "following_topics": ["Health", "Science", "Sports"],
+      "following_topics": [
+        "Health",
+        "Science",
+        "Sports"
+      ],
       "following_channels": [],
       "login": false
     },
@@ -34,12 +46,15 @@
       "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U04EM39MYPJ-e1021cd5d000-512",
       "email": "nagendra@gmail.com",
       "password": "nag123",
-      "following_topics": ["Movies", "Science", "Health"],
+      "following_topics": [
+        "Movies",
+        "Science",
+        "Health"
+      ],
       "following_channels": [],
       "login": false
     }
   ],
-
   "posts": [
     {
       "id": 1,
@@ -236,9 +251,22 @@
       "upvotes": "63",
       "comments": "17",
       "shares": "6"
+    },
+    {
+      "username": "Mayank Sharma",
+      "user_desc": "Content Writer",
+      "title": "",
+      "description": "This is a random post to check if the functionality is working fine or not.",
+      "date": "today",
+      "category": "random",
+      "image": "",
+      "views": "0",
+      "upvotes": "0",
+      "comments": "0",
+      "shares": "0",
+      "id": 15
     }
   ],
-
   "questions": [
     {
       "id": 1,
@@ -337,7 +365,20 @@
       "no_of_answers": 8,
       "last_followed": "Dec 10",
       "followed_by": 5
+    },
+    {
+      "question": "This is a dummy question ?",
+      "no_of_answers": 0,
+      "last_followed": "10s",
+      "followed_by": 1,
+      "id": 15
+    },
+    {
+      "question": "How many bones are there in human body ?",
+      "no_of_answers": 0,
+      "last_followed": "10s",
+      "followed_by": 1,
+      "id": 16
     }
-
   ]
 }

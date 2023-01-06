@@ -1,13 +1,39 @@
 import Styles from "./NewQuestion.module.css";
+import { useRef } from "react";
 
-export default function NewQuestion() {
+export default function NewQuestion({ setTrigger }) {
+  const questionRef = useRef();
+
+  let addNewQuestion = () => {
+    let ques = {
+      question: questionRef.current.value,
+      no_of_answers: 0,
+      last_followed: "10s",
+      followed_by: 1,
+    };
+
+    fetch(`http://localhost:3000/questions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(ques),
+    })
+      .then((res) => res.json())
+      .then((data) =>{
+        console.log(data);
+        // alert('Your question has been posted');
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className={Styles.NewQuestion}>
       <div className={Styles.tipsDiv}>
         <h4>Tips on getting good answers quickly</h4>
         <ul>
-          <li>Make sure your Question has not been asked already</li>
-          <li>Keep your Question short and to the point</li>
+          <li>Make sure your question has not been asked already</li>
+          <li>Keep your question short and to the point</li>
           <li>Double-check grammar and spelling</li>
         </ul>
       </div>
@@ -26,12 +52,19 @@ export default function NewQuestion() {
       <div className={Styles.NewQuestionDiv}>
         <input
           type="text"
-          placeholder='Start your Question with "What", "How", "Why", etc.'
+          placeholder='Start your question with "What", "How", "Why", etc.'
+          ref={questionRef}
         />
       </div>
       <div className={Styles.bottomDiv}>
-        <button>Cancel</button>
-        <button>Add Question</button>
+        <button
+          onClick={() => {
+            setTrigger(false);
+          }}
+        >
+          Cancel
+        </button>
+        <button onClick={addNewQuestion}>Add question</button>
       </div>
     </div>
   );
