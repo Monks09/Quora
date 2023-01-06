@@ -1,7 +1,4 @@
-import React from "react";
-import LeftSider from "../../Component/Following/LeftSider";
-import styles from "../Folllowing/Following.module.css";
-import MidTop from "../../Component/Following/MidTop";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -10,11 +7,17 @@ import {
   Input,
   Image,
   Button,
+  Text,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import Footer from "../../Component/Following/Footer";
+import Sidebar from "../../Component/Following/Sidebar";
 import MidFollowingList from "../../Component/Following/MidFollowingList";
+import Followers from "../../Component/Following/Followers";
+import { Follower } from "../../Api/Url";
+import addfollower from "../../Redux/Following/action";
+import { useDispatch } from "react-redux";
 function Following(props) {
+  const [State, setState] = useState([]);
+  const dispatch = useDispatch();
   const [width, setwidth] = useState(window.innerWidth);
   useEffect(() => {
     setwidth(window.innerWidth);
@@ -23,26 +26,36 @@ function Following(props) {
       window.removeEventListener("resize", setwidth(window.innerWidth));
     };
   }, [width]);
-  let data = {
-    userid: 2,
-    username: "Nitesh Lanjewar",
-    following_topics: ["Movies", "Health", "Technology"],
-    following_channels: [],
-  };
+  useEffect(() => {
+    fetch(Follower).then((res) => {
+      res.json().then((res) => {
+        setState(res);
+        addfollower(res, dispatch);
+      });
+    });
+  }, []);
+console.log(State)
   return (
-    <Grid display={['none','flex']}>
-      <GridItem w={'25%'} bg={"red"}  >
+    <Grid display={["none", "flex"]} bg={"rgb(241 242 242)"}>
+      <GridItem w={"25%"}>
         <Box>
-          {data.following_topics.map((el, i) => {
-            return <LeftSider name={el} img={"img"} />;
-          })}
+          <Sidebar />
         </Box>
-        <Footer />
       </GridItem>
-      <GridItem w={'50%'}>
-        <MidFollowingList/>
+      <GridItem w={"50%"} bg={"white"}>
+        <MidFollowingList />
+        <Text fontSize={"36px"} m={"40px"} mb={"0px"}>
+          Discover Spaces
+        </Text>
+        <Text fontSize={"16px"} ml={"100px"} fontStyle={"oblique"}>
+          Spaces you might like
+        </Text>
+        {State.map((el) => {
+              return <Followers data={el}/>;
+            })
+          }
       </GridItem>
-      <GridItem w={'25%'} bg={"blue"}></GridItem>
+      <GridItem w={"25%"} bg={"blue"}></GridItem>
     </Grid>
   );
 }
