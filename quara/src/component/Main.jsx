@@ -2,36 +2,49 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import SinglePost from "./SinglePost";
+import { succ, req, fail } from "../component/redux/action";
+import { store } from "../component/redux/store";
+import { useSelector } from "react-redux";
 
 function Main() {
-  const [state, setState] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:2000/posts`)
+    store.dispatch(req());
+    fetch(`https://kind-gold-dove-belt.cyclic.app/posts`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setState(data);
-      });
+        store.dispatch(succ(data));
+      })
+      .catch((err) => store.dispatch(fail()));
   }, []);
-  console.log("adas", state);
+
+  const reduxdata = useSelector((store) => {
+    return store;
+  });
+
   return (
     <div className="main">
-      {state?.map((el, i) => {
-        return (
-          <SinglePost
-            key={i}
-            name={el.username}
-            logo="https://th.bing.com/th/id/OIP.vR3c8gJDtTZuFFJLa3nHcwHaHC?pid=ImgDet&rs=1"
-            answer={`Answered by ${el.username}`}
-            topic={el.title}
-            body={el.description}
-            img={el.image}
-            view={el.views}
-            vote={el.upvotes}
-            comment={el.comments}
-          />
-        );
-      })}
+      {console.log()}
+      {reduxdata.isLoading
+        ? "Loading..."
+        : reduxdata.post[0]?.map((el, i) => {
+            return (
+              <SinglePost
+                key={i}
+                id={i}
+                postid={el.postid}
+                name={el.username}
+                logo="https://th.bing.com/th/id/OIP.vR3c8gJDtTZuFFJLa3nHcwHaHC?pid=ImgDet&rs=1"
+                answer={`Answered by ${el.username}`}
+                topic={el.title}
+                body={el.description}
+                img={el.image}
+                date={el.date}
+                view={el.views}
+                vote={el.upvotes}
+                comment={el.comments}
+              />
+            );
+          })}
     </div>
   );
 }

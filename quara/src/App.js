@@ -1,12 +1,13 @@
 import "./App.css";
-import Home from "./component/Home";
+import Allroutes from "./component/Allroutes";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Allroutes />
     </div>
   );
 }
 
 export default App;
+// json-server --watch db.json --port 2000
