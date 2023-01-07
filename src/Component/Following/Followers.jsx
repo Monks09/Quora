@@ -1,9 +1,20 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import React ,{useEffect,useState}from "react";
+import { user } from "../../Api/Url";
 import { useSelector } from "react-redux";
+import { Adddata, Logedinuser } from "./Allfun";
 
 function Followers({data}) {
-console.log(data)
+  const [LogedinUser, setLogedinUser] = useState(null)
+  useEffect(() => {
+    fetch(`${user}?Login=true`).then((res)=>{
+      res.json().then((res)=>{
+          setLogedinUser(res)
+      })
+  })
+  }, [])
+  
+// console.log(data)
   return (
     <div style={{margin:'20px',}}>
           <Box p={"25px"}  display={'flex'} gap={'50px'} border={'ActiveBorder'}>
@@ -14,12 +25,12 @@ console.log(data)
                 src="https://picsum.photos/200"></Image>
             </Box>
             <Box width={'80%'}>
-              <Text>{data.name}</Text>
-              <Text>{data.followers}</Text>
-              <Text>{data.titles}</Text>
+              <Text fontSize={'24px'} fontFamily={'heading'}>{data.name}</Text>
+              <Text fontWeight={'bold'}>{data.followers}</Text>
+              <Text fontWeight={'medium'}>{data.titles}</Text>
             </Box>
             
-            <Button>FOLLOW</Button>
+            <Button onClick={()=>{Adddata(data,LogedinUser)}}>FOLLOW</Button>
           </Box>
     </div>
   );

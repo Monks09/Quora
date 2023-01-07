@@ -1,5 +1,6 @@
 import React from "react";
-function Footer() {
+
+export default function Footer() {
   return (
     <div className="footer">
       <a href="https://www.quora.com/about">About</a>
@@ -14,4 +15,3 @@ function Footer() {
     </div>
   );
 }
-export default Footer
