@@ -283,7 +283,6 @@
       "last_followed": "15m",
       "followed_by": 2,
       "answers": []
-
     },
     {
       "id": 3,
@@ -340,7 +339,6 @@
       "last_followed": "2h",
       "followed_by": 1,
       "answers": []
-
     },
     {
       "id": 10,
@@ -372,14 +370,14 @@
       "no_of_answers": 2,
       "last_followed": "Oct 18",
       "followed_by": 3,
-      "answers":[]
+      "answers": []
     },
     {
       "id": 14,
       "question": "What do people think of Floyd Mayweather's boxing style?",
       "no_of_answers": 8,
       "last_followed": "Dec 10",
-      "followed_by": 5, 
+      "followed_by": 5,
       "answers": []
     },
     {
@@ -397,6 +395,13 @@
       "followed_by": 1,
       "id": 16,
       "answers": []
+    },
+    {
+      "question": "Dummy Question ?",
+      "no_of_answers": 0,
+      "last_followed": "10s",
+      "followed_by": 1,
+      "id": 17
     }
   ]
 }

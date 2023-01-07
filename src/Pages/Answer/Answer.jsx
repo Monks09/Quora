@@ -34,7 +34,8 @@ export default function Answer() {
         <div className={styles.questions}>
           {data.map((el) => {
             return <Question
-              key={el.question_id}
+              key={el.id}
+              id={el.id}
               question={el.question}
               no_of_answers={el.no_of_answers}
               last_followed={el.last_followed}

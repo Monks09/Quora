@@ -46,3 +46,12 @@ span {
     bottom: 10px;
     right: 10px;
 } 
+
+.Question a {
+    background-color: white;
+    color: black;
+}
+
+.Question a:hover {
+    text-decoration: underline;
+}
