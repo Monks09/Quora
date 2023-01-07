@@ -270,115 +270,133 @@
   "questions": [
     {
       "id": 1,
-      "question": "The Italian sport press is arguing that the current Juventus team is the weakest in the last nine years. Do you agree? Why or why not?",
+      "question": "What happens if the digestive system becomes clogged?",
       "no_of_answers": 3,
       "last_followed": "1h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 2,
-      "question": "What Olympians have tried to sell their gold medals?",
+      "question": "How do I get rid of anxiety and stress in a natural way?",
       "no_of_answers": 1,
       "last_followed": "15m",
-      "followed_by": 2
+      "followed_by": 2,
+      "answers": []
+
     },
     {
       "id": 3,
-      "question": "Mbappé’s astonishing performance further confirmed in the World Cup 2022, do you agree?",
+      "question": "Why are most people not committed for personal hygiene?",
       "no_of_answers": 43,
       "last_followed": " Oct 11",
-      "followed_by": 52
+      "followed_by": 52,
+      "answers": []
     },
     {
       "id": 4,
-      "question": "What does “G.O.A.T” mean in football?",
+      "question": "What is the best remedy for nosia?",
       "no_of_answers": 4,
       "last_followed": "Dec 31",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 5,
-      "question": "What is the scientific name of water?",
+      "question": "How can I use unlimited free Internet in Uganda?",
       "no_of_answers": 1,
       "last_followed": "2h",
-      "followed_by": 0
+      "followed_by": 0,
+      "answers": []
     },
     {
       "id": 6,
-      "question": "What is your scientific fact of the day 465?",
+      "question": "What is the next big thing beyond the Metaverse?",
       "no_of_answers": 1,
       "last_followed": "1h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 7,
-      "question": "What are some amazing science facts which can get 886644k views?",
+      "question": "How do I lengthen hair in the winter?",
       "no_of_answers": 2,
       "last_followed": "5h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 8,
-      "question": "If scientists say the universe will end in 5 billion years, but we can see galaxies 12 billion light years away, has the universe already ended?",
+      "question": "What would happen if someone working out on steroids also used finasteride?",
       "no_of_answers": 2,
       "last_followed": "5h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 9,
-      "question": "What is the best way to take care of myself as I age?",
+      "question": "What is आदिपुरुष के निर्माता कौन है?",
       "no_of_answers": 1,
       "last_followed": "2h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
+
     },
     {
       "id": 10,
-      "question": "How does the ketogenic diet work?",
+      "question": "How do I see who the OP is without scrolling down?",
       "no_of_answers": 0,
       "last_followed": "2h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 11,
-      "question": "What are some screenshots deserves 800k views?",
+      "question": "How does one balance individual goals against team objectives during a fencing tournament?",
       "no_of_answers": 3,
       "last_followed": "3d",
-      "followed_by": 2
+      "followed_by": 2,
+      "answers": []
     },
     {
       "id": 12,
-      "question": "How can you tell if a movie scene is CGI?",
+      "question": "What makes bobsledding one of the more dangerous sports seen at Winter Olympic events?",
       "no_of_answers": 5,
       "last_followed": "2h",
-      "followed_by": 1
+      "followed_by": 1,
+      "answers": []
     },
     {
       "id": 13,
-      "question": "What are your thoughts and opinions about technology?",
+      "question": "Is it true that coconut powder lightens the skin?",
       "no_of_answers": 2,
       "last_followed": "Oct 18",
-      "followed_by": 3
+      "followed_by": 3,
+      "answers":[]
     },
     {
       "id": 14,
-      "question": "What do you think technology will look like after 20 years?",
+      "question": "What do people think of Floyd Mayweather's boxing style?",
       "no_of_answers": 8,
       "last_followed": "Dec 10",
-      "followed_by": 5
+      "followed_by": 5, 
+      "answers": []
     },
     {
       "question": "This is a dummy question ?",
       "no_of_answers": 0,
       "last_followed": "10s",
       "followed_by": 1,
-      "id": 15
+      "id": 15,
+      "answers": []
     },
     {
       "question": "How many bones are there in human body ?",
       "no_of_answers": 0,
       "last_followed": "10s",
       "followed_by": 1,
-      "id": 16
+      "id": 16,
+      "answers": []
     }
   ]
 }
