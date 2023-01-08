@@ -8,7 +8,6 @@ function Private() {
   const reduxdata = useSelector((store) => {
     return store.post;
   });
-  console.log(url, reduxdata);
   return (
     <div>
       {reduxdata.isLoading

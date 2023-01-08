@@ -15,7 +15,7 @@ a {
     display: flex;
     flex-direction: column;
   }
-  .css-0{
+  .css-0 {
     display: flex;
     justify-content: end;
   }
@@ -41,11 +41,10 @@ a {
 .sidebar > div:first-child {
   display: flex;
   gap: 10px;
-  color: aquamarine;
+  color: rgb(121, 123, 122);
   cursor: pointer;
   padding: 5px;
   flex-direction: column;
-  
 }
 /* .sidebar > div:first-child:hover {
   background-color: aliceblue;
@@ -93,7 +92,6 @@ a {
   align-items: center;
   gap: 10px;
   width: 100%;
-  
 }
 .black {
   color: black;
