@@ -1,32 +1,30 @@
 {
   "users": [
     {
-      "userid": 1,
-      "username": "Mayank Sharma",
+      "user_id": 1,
+      "user_name": "Mayank Sharma",
+      "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512",
       "following_topics": ["Sports", "Movies", "Technology"],
       "following_channels": []
     },
     {
-      "userid": 2,
-      "username": "Nitesh Lanjewar",
+      "user_id": 2,
+      "user_name": "Nitesh Lanjewar",
+      "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U03NTNWQECW-9ff071da60e4-512",
       "following_topics": ["Movies", "Health", "Technology"],
       "following_channels": []
     },
     {
-      "userid": 3,
-      "username": "Roshan Kumar",
+      "user_id": 3,
+      "user_name": "Roshan Kumar",
+      "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U03P2SSKSMN-8eb12ca464b0-512",
       "following_topics": ["Health", "Science", "Sports"],
       "following_channels": []
     },
     {
-      "userid": 4,
-      "username": "Bhaskar Ganesh Naik",
-      "following_topics": ["Technology", "Sports", "Science"],
-      "following_channels": []
-    },
-    {
-      "userid": 5,
-      "username": "Nagendra Dangi",
+      "user_id": 4,
+      "user_name": "Nagendra Dangi",
+      "user_image": "https://ca.slack-edge.com/T03BHDQT1GT-U04EM39MYPJ-e1021cd5d000-512",
       "following_topics": ["Movies", "Science", "Health"],
       "following_channels": []
     }
