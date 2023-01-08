@@ -4,17 +4,7 @@ import { user } from "../../Api/Url";
 import { useSelector } from "react-redux";
 import { Adddata, Logedinuser } from "./Allfun";
 
-function Followers({data}) {
-  const [LogedinUser, setLogedinUser] = useState(null)
-  useEffect(() => {
-    fetch(`${user}?Login=true`).then((res)=>{
-      res.json().then((res)=>{
-          setLogedinUser(res)
-      })
-  })
-  }, [])
-  
-// console.log(data)
+function Followers({data,setLogedinUser}) {
   return (
     <div style={{margin:'20px',}}>
           <Box p={"25px"}  display={'flex'} gap={'50px'} border={'ActiveBorder'}>
@@ -30,7 +20,7 @@ function Followers({data}) {
               <Text fontWeight={'medium'}>{data.titles}</Text>
             </Box>
             
-            <Button onClick={()=>{Adddata(data,LogedinUser)}}>FOLLOW</Button>
+            <Button onClick={()=>{(setLogedinUser({Followers:1}))}}>FOLLOW</Button>
           </Box>
     </div>
   );

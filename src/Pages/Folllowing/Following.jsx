@@ -3,16 +3,18 @@ import {  Box,  Flex,  Grid,  GridItem,  Input,  Image,  Button,  Text,} from "@
 import Sidebar from "../../Component/Following/Sidebar";
 import MidFollowingList from "../../Component/Following/MidFollowingList";
 import Followers from "../../Component/Following/Followers";
-import { Follower } from "../../Api/Url";
+import { Follower,user } from "../../Api/Url";
 import addfollower from "../../Redux/Following/action";
 import { useDispatch, useSelector } from "react-redux";
 import "../../Component/Following/Sidebar.css"
 import Ad from "../../Component/Following/Ad";
+import Main from "../../Component/Following/Main";
 function Following(props) {
   const [State, setState] = useState([]);
   
   const dispatch = useDispatch();
   const [width, setwidth] = useState(window.innerWidth);
+  const [LogedinUser, setLogedinUser] = useState({Followers:0})
   useEffect(() => {
     setwidth(window.innerWidth);
     return () => {
@@ -27,6 +29,11 @@ function Following(props) {
           addfollower(res, dispatch);
         });
       });
+      fetch(`${user}?Login=true`).then((res)=>{
+        res.json().then((res)=>{
+            setLogedinUser(res)
+        })
+    })
     }
     }, []);
 console.log(State)
@@ -38,6 +45,7 @@ console.log(State)
         </Box>
       </GridItem>
       <GridItem w={"50%"} bg={"white"}>
+        {LogedinUser.Followers>0?<Main/>:<Box>
         <MidFollowingList />
         <Text fontSize={"36px"} m={"40px"} mb={"0px"}>
           Discover Spaces
@@ -46,9 +54,10 @@ console.log(State)
           Spaces you might like
         </Text>
         {State.map((el) => {
-              return <Followers data={el}/>;
-            })
-          }
+          return <Followers data={el} setLogedinUser={setLogedinUser}/>;
+        })
+      }
+      </Box>}
       </GridItem>
       <GridItem w={"25%"}>
         <Ad/>
