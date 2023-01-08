@@ -1,22 +1,24 @@
 import styles from "./NewPost.module.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { post as url } from "../../Api/Url";
 export default function NewPost() {
   const postRef = useRef();
+  const postImageRef = useRef();
+  const [postimage, setPostImage] = useState(false);
 
   let addNewPost = () => {
     let post = {
       username: "Mayank Sharma",
       user_desc: "Content Writer",
-      title: "",
+      title: "This is a new post",
       description: postRef.current.value,
       date: "today",
-      category: "random",
-      image: "",
+      category: "Random",
+      image: postImageRef.current.value,
       views: "0",
-      upvotes: "0",
-      comments: "0",
-      shares: "0",
+      upvotes: 0,
+      comments: 0,
+      shares: 0,
     };
 
     fetch(`${url}`, {
@@ -69,9 +71,22 @@ export default function NewPost() {
           <span>
             <i class="fa-solid fa-a"></i>
           </span>
-          <span>
+          <span
+            onClick={() => {
+              setPostImage(true);
+            }}
+          >
             <i class="fa-regular fa-images"></i>
           </span>
+          {postimage ? (
+            <input
+              type="url"
+              placeholder="Enter image url"
+              ref={postImageRef}
+            />
+          ) : (
+            ""
+          )}
         </div>
         <div>
           <button onClick={addNewPost}>Post</button>
