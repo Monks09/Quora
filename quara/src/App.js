@@ -1,10 +1,12 @@
 import "./App.css";
 import Allroutes from "./component/Allroutes";
+import Input from "./component/Input";
 
 function App() {
   return (
     <div className="App">
       <Allroutes />
+      {/* <Input /> */}
     </div>
   );
 }

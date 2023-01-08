@@ -11,7 +11,7 @@ function Answer() {
     return store.post[0];
   });
   const newdata = data[id];
-  console.log(id);
+  // console.log(id);
   return (
     <div className="Answer">
       <div className="Answer-component">
@@ -34,7 +34,7 @@ function Answer() {
           name={newdata.username}
           logo="https://th.bing.com/th/id/OIP.vR3c8gJDtTZuFFJLa3nHcwHaHC?pid=ImgDet&rs=1"
           answer={`Answered by ${newdata.username}`}
-          postid={id + 1}
+          postid={newdata.postid}
           body={newdata.description}
           img={newdata.image}
           view={newdata.views}
