@@ -272,13 +272,11 @@
       "id": 1,
       "category": "Health",
       "question": "What happens if the digestive system becomes clogged?",
-      "no_of_answers": 3,
+      "no_of_answers": 1,
       "last_followed": "1h",
       "followed_by": 1,
       "answers": [
-        "this is my answer",
-        "This is another answer",
-        "one more answer"
+        "This is a dummy answer"
       ]
     },
     {
@@ -286,12 +284,10 @@
       "category": "Health",
       "id": 2,
       "question": "How do I get rid of anxiety and stress in a natural way?",
-      "no_of_answers": 1,
+      "no_of_answers": 0,
       "last_followed": "15m",
       "followed_by": 2,
-      "answers": [
-        "This is a dummy answer"
-      ]
+      "answers": []
     },
     {
       "id": 3,
