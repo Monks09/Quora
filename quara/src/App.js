@@ -1,7 +1,5 @@
 import "./App.css";
-import Allroutes from "./component/Allroutes";
-import Input from "./component/Input";
-
+import Allroutes from "./component/Home/Allroutes";
 function App() {
   return (
     <div className="App">
