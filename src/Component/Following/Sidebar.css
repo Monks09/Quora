@@ -15,11 +15,17 @@ a {
     display: flex;
     flex-direction: column;
   }
+  .css-0{
+    display: flex;
+    justify-content: end;
+  }
   .sidebar,
   .footer,
   .ad {
     position: relative !important;
     width: 100% !important;
+    display: flex;
+    justify-content: end;
   }
   .sidebar > div {
     flex-direction: row !important;
@@ -39,6 +45,7 @@ a {
   cursor: pointer;
   padding: 5px;
   flex-direction: column;
+  
 }
 /* .sidebar > div:first-child:hover {
   background-color: aliceblue;
@@ -86,6 +93,7 @@ a {
   align-items: center;
   gap: 10px;
   width: 100%;
+  
 }
 .black {
   color: black;

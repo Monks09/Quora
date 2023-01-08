@@ -4,20 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { store } from "./store";
-
+import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter } from 'react-router-dom'
+import store from "./Store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
+  <Provider store={store}>
+  <BrowserRouter>
+    <ChakraProvider>
+      <React.StrictMode>
         <App />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+      </React.StrictMode>
+    </ChakraProvider>
+  </BrowserRouter>
+  </Provider>
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
