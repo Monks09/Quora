@@ -6,7 +6,7 @@ function App() {
       <Allroutes />
       {/* <Input /> */}
     </div>
-  );
+  )
 }
 
 export default App;
