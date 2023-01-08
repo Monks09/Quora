@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useState } from "react";
-import AnswerPopup from "../../Components/AnswerPopup/AnswerPopup";
-import RelatedQuestions from "../../Components/RelatedQuestions/RelatedQuestions";
+import AnswerPopup from "../../Component/AnswerPopup/AnswerPopup";
+import RelatedQuestions from "../../Component/RelatedQuestions/RelatedQuestions";
 
 export default function SingleQuestion({}) {
   const pathParams = useParams();

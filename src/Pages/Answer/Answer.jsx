@@ -2,7 +2,7 @@ import styles from "./Answer.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import answerThunkActionCreater from '../../Redux/Answer/answerThunkAction';
-import Question from "../../Components/Question/Question";
+import Question from "../../Component/Question/Question";
 
 export default function Answer() {
   const dispatch = useDispatch();
