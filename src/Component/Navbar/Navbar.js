@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Home } from "@mui/icons-material";
-// import Modal from "react-modal";
 import "./Navbar.css";
 import LanguageIcon from "@mui/icons-material/Language";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,7 +8,6 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import ArticleIcon from "@mui/icons-material/Article";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { Link } from "react-router-dom";
-// Modal.setAppElement("#root");
 function Navbar() {
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
