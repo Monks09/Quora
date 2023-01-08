@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useSelector } from "react-redux";
 import styles from "./AnswerPopup.module.css";
 import { useDispatch } from "react-redux";
-import answerThunkActionCreater from "../../Redux/answerThunkAction";
+import answerThunkActionCreater from "../../Redux/Answer/answerThunkAction";
 
 export default function AnswerPopup({ ques_id, setAnsPopup }) {
   const dispatch = useDispatch();
