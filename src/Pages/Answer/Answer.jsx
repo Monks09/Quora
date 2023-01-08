@@ -7,7 +7,7 @@ import Question from "../../Components/Question/Question";
 export default function Answer() {
   const dispatch = useDispatch();
   const data = useSelector((storeData) => {
-    return storeData.answer;
+    return storeData.questions;
   });
 
   useEffect(() => {
@@ -42,6 +42,19 @@ export default function Answer() {
               followed_by={el.followed_by}
             />;
           })}
+        </div>
+        <div className={styles.moreDiv}>
+          <div>More <i class="fa-solid fa-angle-down"></i></div>
+        </div>
+        <div className={styles.addTopics}>
+          <div>
+            <h3>Add 5 topics you know about</h3>
+            <p>You'll get better questions if you add more specific topics.</p>
+            <button>Add topics</button>
+          </div>
+          <div>
+            <img src="https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_about_page.light_mode.GatherAroundAQuestion_LM.png-26-a377318c55ce1d10.png" alt="topics" />
+          </div>
         </div>
       </div>
       <div className={styles.right}>

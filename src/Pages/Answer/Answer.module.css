@@ -81,3 +81,43 @@
     cursor: pointer;
     background-color: rgb(210, 230, 237);
 }
+
+.moreDiv {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.addTopics {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addTopics h3 {
+    margin: 10px 0px;
+}
+
+.addTopics p {
+    margin: 10px 0px;
+    color: grey;
+}
+
+.addTopics button {
+    margin: 10px 0px;
+    padding: 10px 15px;
+    border: 2px solid rgb(27, 167, 222);
+    border-radius: 18px;
+    color: rgb(27, 167, 222);
+    background-color: white;
+}
+
+.addTopics button:hover {
+    cursor: pointer;
+    background-color: rgb(210, 230, 237);
+}
+
+
+.addTopics img {
+    width: 100px;
+}

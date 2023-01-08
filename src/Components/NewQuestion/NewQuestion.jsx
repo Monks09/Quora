@@ -3,13 +3,16 @@ import { useRef } from "react";
 
 export default function NewQuestion({ setTrigger }) {
   const questionRef = useRef();
+  const categoryRef = useRef();
 
   let addNewQuestion = () => {
     let ques = {
       question: questionRef.current.value,
+      category: categoryRef.current.value,
       no_of_answers: 0,
       last_followed: "10s",
       followed_by: 1,
+      answers: []
     };
 
     fetch(`http://localhost:3000/questions`, {
@@ -39,14 +42,17 @@ export default function NewQuestion({ setTrigger }) {
       </div>
       <div className={Styles.accessDiv}>
         <img
-          src="https://thumbs.dreamstime.com/z/portrait-young-handsome-happy-man-wearing-glasses-casual-smart-blue-clothing-yellow-color-background-square-composition-200740125.jpg"
+          src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
           alt="avatar"
           style={{ width: "15px", borderRadius: "50%" }}
         />
         <i class="fa-solid fa-play"></i>
-        <select name="access" id="access">
-          <option value="public">Public</option>
-          <option value="limited">Limited</option>
+        <select name="category" id="category" ref={categoryRef}>
+          <option value="Science">Science</option>
+          <option value="Health">Health</option>
+          <option value="Technology">Technology</option>
+          <option value="Sports">Sports</option>
+          <option value="Movies">Movies</option>
         </select>
       </div>
       <div className={Styles.NewQuestionDiv}>

@@ -1,6 +1,15 @@
+.SingleQuestion {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    width: 80%;
+    margin: 20px auto;
+
+}
+
 .questionDiv {
     width: 60%;
-    margin: 20px auto;
     border: 2px solid black;
     padding: 20px;
 }
@@ -78,4 +87,24 @@
 .rightButtons > button:hover {
     background-color: rgb(232, 230, 230);
     cursor: pointer;
+}
+
+.answers {
+    margin-top: 20px;
+    border-top: 2px solid grey;
+}
+
+.answers i {
+    width: 20px;
+    padding: 10px;
+}
+
+.answers ul > li {
+    margin: 10px;
+}
+
+.answers > div:last-child > p {
+    font-weight: bold;
+    margin: 10px 0px;
+    text-decoration: underline;
 }

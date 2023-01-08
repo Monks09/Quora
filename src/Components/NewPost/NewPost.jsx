@@ -35,12 +35,12 @@ export default function NewPost() {
     <div className={styles.NewPost}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <img
-          src="https://thumbs.dreamstime.com/z/portrait-young-handsome-happy-man-wearing-glasses-casual-smart-blue-clothing-yellow-color-background-square-composition-200740125.jpg"
+          src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
           alt="avatar"
           style={{ height: "40px", borderRadius: "50%" }}
         />
         <div style={{ padding: "10px", borderRadius: "20px" }}>
-          <h5>Username</h5>
+          <h4>Username</h4>
           <button
             style={{
               backgroundColor: "white",

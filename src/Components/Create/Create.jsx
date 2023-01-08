@@ -5,7 +5,7 @@ export default function Create({setTrigger, setPopupData}) {
     
     return <div className={styles.Create}>
         <div>
-            <img src="https://thumbs.dreamstime.com/z/portrait-young-handsome-happy-man-wearing-glasses-casual-smart-blue-clothing-yellow-color-background-square-composition-200740125.jpg" alt="user-img" />
+            <img src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512" alt="user-img" />
             <input type="text" placeholder='What do you want to ask or share?' onClick={()=> setTrigger(true)}/>
         </div>
         <div>

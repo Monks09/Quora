@@ -1,0 +1,18 @@
+.RelatedQuestions {
+    width: 30%;
+    border: 2px solid green;
+    padding: 20px;
+    height: fit-content;
+}
+
+.RelatedQuestions > p {
+    margin: 10px;
+    color: rgb(14, 116, 156);
+}
+
+.RelatedQuestions > p:first-child {
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}

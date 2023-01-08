@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import answerReducer from './answerReducer';
 
 const combinedReducer = combineReducers({
-    answer: answerReducer
+    questions: answerReducer
 })
 
 const myStore = legacy_createStore(combinedReducer, applyMiddleware(logger, thunk));
