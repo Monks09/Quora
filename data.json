@@ -1,40 +1,7 @@
 {
-  "users": [
-    {
-      "userid": 1,
-      "username": "Mayank Sharma",
-      "following_topics": ["Sports", "Movies", "Technology"],
-      "following_channels": []
-    },
-    {
-      "userid": 2,
-      "username": "Nitesh Lanjewar",
-      "following_topics": ["Movies", "Health", "Technology"],
-      "following_channels": []
-    },
-    {
-      "userid": 3,
-      "username": "Roshan Kumar",
-      "following_topics": ["Health", "Science", "Sports"],
-      "following_channels": []
-    },
-    {
-      "userid": 4,
-      "username": "Bhaskar Ganesh Naik",
-      "following_topics": ["Technology", "Sports", "Science"],
-      "following_channels": []
-    },
-    {
-      "userid": 5,
-      "username": "Nagendra Dangi",
-      "following_topics": ["Movies", "Science", "Health"],
-      "following_channels": []
-    }
-  ],
-
   "posts": [
     {
-      "postid": 1,
+      "id": 1,
       "username": "Roshan Kumar",
       "user_desc": "Sports Enthusiast",
       "title": "The Italian sport press is arguing that the current Juventus team is the weakest in the last nine years. Do you agree? Why or why not?",
@@ -48,7 +15,7 @@
       "shares": "33"
     },
     {
-      "postid": 2,
+      "id": 2,
       "username": "Mayank Sharma",
       "user_desc": "Sports lover and enthusiast",
       "title": "What Olympians have tried to sell their gold medals?",
@@ -62,7 +29,7 @@
       "shares": "36"
     },
     {
-      "postid": 3,
+      "id": 3,
       "username": "Bhaskar Ganesh Naik",
       "user_desc": "World cup follower",
       "title": "Mbappé’s astonishing performance further confirmed in the World Cup 2022, do you agree?",
@@ -76,7 +43,7 @@
       "shares": "4"
     },
     {
-      "postid": 4,
+      "id": 4,
       "username": "Nagendra Dangi",
       "user_desc": "Soccer Enthusiast",
       "title": "What does “G.O.A.T” mean in football?",
@@ -90,7 +57,7 @@
       "shares": "2"
     },
     {
-      "postid": 5,
+      "id": 5,
       "username": "Nitesh Lanjewar",
       "user_desc": "Science Lover",
       "title": "What is the scientific name of water?",
@@ -104,7 +71,7 @@
       "shares": "1"
     },
     {
-      "postid": 6,
+      "id": 6,
       "username": "Bhaskar Ganesh Naik",
       "user_desc": "Science Facts Explorer",
       "title": "What is your scientific fact of the day 465?",
@@ -118,7 +85,7 @@
       "shares": "2"
     },
     {
-      "postid": 7,
+      "id": 7,
       "username": "Nagendra Dangi",
       "user_desc": "Science Explorer",
       "title": "What are some amazing science facts which can get 886644k views?",
@@ -132,7 +99,7 @@
       "shares": "1"
     },
     {
-      "postid": 8,
+      "id": 8,
       "username": "Mayank Sharma",
       "user_desc": "Science Enthusiast",
       "title": "If scientists say the universe will end in 5 billion years, but we can see galaxies 12 billion light years away, has the universe already ended?",
@@ -146,7 +113,7 @@
       "shares": "1"
     },
     {
-      "postid": 9,
+      "id": 9,
       "username": "Nitesh Lanjewar",
       "user_desc": "Health Freak",
       "title": "What is the best way to take care of myself as I age?",
@@ -160,7 +127,7 @@
       "shares": "3"
     },
     {
-      "postid": 10,
+      "id": 10,
       "username": "Roshan Kumar",
       "user_desc": "Health and Diet expert",
       "title": "How does the ketogenic diet work?",
@@ -174,7 +141,7 @@
       "shares": "6"
     },
     {
-      "postid": 11,
+      "id": 11,
       "username": "Nagendra Dangi",
       "user_desc": "Movies Lover",
       "title": "What are some screenshots deserves 800k views?",
@@ -188,7 +155,7 @@
       "shares": "1"
     },
     {
-      "postid": 12,
+      "id": 12,
       "username": "Bhaskar Ganesh Naik",
       "user_desc": "Movies Lover",
       "title": "How can you tell if a movie scene is CGI?",
@@ -202,7 +169,7 @@
       "shares": "1"
     },
     {
-      "postid": 13,
+      "id": 13,
       "username": "Nitesh Lanjewar",
       "user_desc": "Tech Enthusiast",
       "title": "What are your thoughts and opinions about technology?",
@@ -216,7 +183,7 @@
       "shares": "16"
     },
     {
-      "postid": 14,
+      "id": 14,
       "username": "Bhaskar Ganesh Naik",
       "user_desc": "Tech Enthusiast",
       "title": "What do you think technology will look like after 20 years?",
@@ -228,6 +195,379 @@
       "upvotes": "63",
       "comments": "17",
       "shares": "6"
+    }
+  ],
+  "users": [],
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which Indian fruit contains all kinds of vitamins?",
+      "no_of_answers": 3,
+      "last_followed": "1h",
+      "followed_by": 1,
+      "answers": []
+    },
+    {
+      "id": 2,
+      "question": "Which country is famous for hockey?",
+      "no_of_answers": 0,
+      "last_followed": "15m",
+      "followed_by": 2,
+      "answers": []
+    },
+    {
+      "id": 3,
+      "question": "What is the scope of machine learning in the future?",
+      "no_of_answers": 43,
+      "last_followed": " Oct 11",
+      "followed_by": 52,
+      "answers": []
+    },
+    {
+      "id": 4,
+      "question": "Which keto diet is the best? Is Keto diet really helpful?",
+      "no_of_answers": 4,
+      "last_followed": "Dec 31",
+      "followed_by": 1,
+      "answers": []
+    },
+    {
+      "id": 5,
+      "question": "What happens if you don't update your Android smartphone?",
+      "no_of_answers": 1,
+      "last_followed": "2h",
+      "followed_by": 0,
+      "answers": []
+    },
+    {
+      "id": 6,
+      "question": "What is Google, and who made it?",
+      "no_of_answers": 0,
+      "last_followed": "1h",
+      "followed_by": 1,
+      "answers": []
+    },
+    {
+      "id": 7,
+      "question": "What are the benefits of playing pickle ball over tennis?",
+      "no_of_answers": 2,
+      "last_followed": "5h",
+      "followed_by": 1,
+      "answers": []
+    },
+    {
+      "id": 8,
+      "question": "Why do people not ask questions before they or their family get impacted?",
+      "no_of_answers": 2,
+      "last_followed": "5h",
+      "followed_by": 1,
+      "answers": []
+    },
+    {
+      "id": 9,
+      "question": "Which is the best platform for earning money online in 2023, YouTube or Quora?",
+      "no_of_answers": 1,
+      "last_followed": "2h",
+      "followed_by": 1,
+      "answers": []
+    },
+    {
+      "id": 10,
+      "question": "What are the benefits of yoga at home?",
+      "no_of_answers": 0,
+      "last_followed": "2h",
+      "followed_by": 1,
+      "answers": []
+    }
+  ],
+  "Followers": [
+    {
+      "id": 1,
+      "name": "YouTube ♧ promote",
+      "followers": "8.6K followers",
+      "titles": "You can promote your YouTube videos and channel."
+    },
+    {
+      "id": 2,
+      "name": "Humans psychology",
+      "followers": "92.1K followers",
+      "titles": "Psychology can be considered a humanity as well as a science"
+    },
+    {
+      "id": 3,
+      "name": "Iphone tips tricks",
+      "followers": "1.1K followers",
+      "titles": "This space is all about apple leaks, iphone tips n tricks"
+    },
+    {
+      "id": 4,
+      "name": "Study_motivation",
+      "followers": "4.6K followers",
+      "titles": "Your thoughts are the architect of your destiny"
+    },
+    {
+      "id": 5,
+      "name": "Business and future",
+      "followers": "3K followers",
+      "titles": "We all working for others business . let's make our own business."
+    },
+    {
+      "id": 6,
+      "name": "Study Tips and Tricks",
+      "followers": "148.3K followers",
+      "titles": "Tips and Tricks to Study Better, Faster and with Less Stress"
+    },
+    {
+      "id": 7,
+      "name": "Logo | Graphic Designs",
+      "followers": "2.5K followers",
+      "titles": "Logo"
+    },
+    {
+      "id": 8,
+      "name": "Business & Marketing",
+      "followers": "317.6K followers",
+      "titles": "1)Business Ideas 2)Small Business Start-ups 3) Invest and Earn 4) Buy and sell"
+    },
+    {
+      "id": 9,
+      "name": "Technological Trendz",
+      "followers": "178.8K followers",
+      "titles": "This space is all about the latest technology trends."
+    },
+    {
+      "id": 10,
+      "name": "Startup Era",
+      "followers": "282.5K followers",
+      "titles": "Best way to boost economy."
+    },
+    {
+      "id": 11,
+      "name": "World History",
+      "followers": "2.8M followers",
+      "titles": "My answers on World History here"
+    },
+    {
+      "id": 12,
+      "name": "STARTUPS - Strategies/Tips/Ideas",
+      "followers": "22.9K followers",
+      "titles": "Learn/gain some knowledge from already succeeded \"Startup-Stories\""
+    },
+    {
+      "id": 13,
+      "name": "Demon slayer",
+      "followers": "5K followers",
+      "titles": "For all demon slayer fans👺"
+    },
+    {
+      "id": 14,
+      "name": "AutoCAD & SolidWorks Tips",
+      "followers": "1.9K followers",
+      "titles": "Learn Designing in AutoCAD and SolidWorks."
+    },
+    {
+      "id": 15,
+      "name": "Small Businesses Club",
+      "followers": "8.9K followers",
+      "titles": "Join this space to get daily updates & info on Small Businesses"
+    },
+    {
+      "id": 16,
+      "name": "Fashion_Trends",
+      "followers": "3.5K followers",
+      "titles": "Get latest fashion trends, news, style, looks, tips and more."
+    },
+    {
+      "id": 17,
+      "name": "Graphic Design",
+      "followers": "8.1K followers",
+      "titles": "Modern, Minimalistic, User Friendly ~ Graphic Design Inspiration"
+    },
+    {
+      "id": 18,
+      "name": "Start-Up Guide",
+      "followers": "9.6K followers",
+      "titles": "Everything about start-up ecosystem, market and the future aspects"
+    },
+    {
+      "id": 19,
+      "name": "Entrepreneurship",
+      "followers": "372K followers",
+      "titles": "Entrepreneur Stories and Tips for Business Growth"
+    },
+    {
+      "id": 20,
+      "name": "Power of positivity.",
+      "followers": "12.5K followers",
+      "titles": "Circumstance can be bad things might get tough all can be dealt with positivity."
+    },
+    {
+      "id": 21,
+      "name": "Next_Billionaire",
+      "followers": "121K followers",
+      "titles": "Start-up, Entrepreneurship, Business, Cryptocurrency, Hard Motivation"
+    },
+    {
+      "id": 22,
+      "name": "Netflix Nerds",
+      "followers": "5.3K followers",
+      "titles": "Let's together binge watch and review some amazing shows and movies here!"
+    },
+    {
+      "id": 23,
+      "name": "Education & Educators",
+      "followers": "5.2K followers",
+      "titles": "Education & Educators/Teachers/Teacher Trainers/Professors/Lecturers/Mentors"
+    },
+    {
+      "id": 24,
+      "name": "The Entrepreneur",
+      "followers": "117K followers",
+      "titles": "Space for entrepreneurs"
+    },
+    {
+      "id": 25,
+      "name": "The Songs of Life",
+      "followers": "1.5K followers",
+      "titles": "Life is a musical journey, sing along my friend - there is no dead end!!!"
+    },
+    {
+      "id": 26,
+      "name": "BTS ARMY WORLD 💜",
+      "followers": "10K followers",
+      "titles": "Hey army welcome to the world of BTS."
+    },
+    {
+      "id": 27,
+      "name": "\"Novel Tips Desk\"",
+      "followers": "10 followers",
+      "titles": "Here, you'll find helpful advice and tips on how to write and finish your novel."
+    },
+    {
+      "id": 28,
+      "name": "Indian Start-up Guide",
+      "followers": "95K followers",
+      "titles": "Everything about Indian start-up ecosystem, market and the future aspects."
+    },
+    {
+      "id": 29,
+      "name": "CBSE Class 12 Board Exam",
+      "followers": "133.9K followers",
+      "titles": "This space is for all Class 12 students of CBSE board"
+    },
+    {
+      "id": 30,
+      "name": "Mobile Technology Reviews",
+      "followers": "36.2K followers",
+      "titles": "Latest/Upcoming Technology & Modern Mobile World (Follow Space & Keep up to date"
+    },
+    {
+      "id": 31,
+      "name": "Business Talk",
+      "followers": "2K followers",
+      "titles": "Join to get update for startups,entreprenurship,businesses,investment & markets!"
+    },
+    {
+      "id": 32,
+      "name": "Indian Web Series",
+      "followers": "81.5K followers",
+      "titles": "Reviews, Tweets, Latest News, and Updates about Indian Web Series."
+    },
+    {
+      "id": 33,
+      "name": "Entrepreneur advice",
+      "followers": "2.1K followers",
+      "titles": "A space which will enables or enhance our Entrepreneur advice"
+    },
+    {
+      "id": 34,
+      "name": "Music Home",
+      "followers": "399K followers",
+      "titles": "1)Music Lovers HOME 2)Latest Music updates 3) World's Best Music Albums Display"
+    },
+    {
+      "id": 35,
+      "name": "Sachida N Sharma's / Server",
+      "followers": "14 followers",
+      "titles": "VPS/Cloud Server/ControlPannel"
+    },
+    {
+      "id": 36,
+      "name": "Art & Interior Design",
+      "followers": "83.8K followers",
+      "titles": "Join this space to get latest Home Art, Interior Design, Architecture & Decor"
+    },
+    {
+      "id": 37,
+      "name": "UI/UX Labs",
+      "followers": "114 followers",
+      "titles": "Share & Discuss new design trends, opportunities. Get design tips & reviews."
+    },
+    {
+      "id": 38,
+      "name": "CBSE",
+      "followers": "152.7K followers",
+      "titles": "The Top Quora space for CBSE students. Central Board of secondary education"
+    },
+    {
+      "id": 39,
+      "name": "Women's Fashion & Style",
+      "followers": "179.5K followers",
+      "titles": "Everything about Women's Latest Fashion, Clothing, Style & Trends(No Ad*lt cont)"
+    },
+    {
+      "id": 40,
+      "name": "Mohammed Gouse's Space",
+      "followers": "12 followers",
+      "titles": "I am a passionate student of sports, politics,i will share most relevant Q/N"
+    },
+    {
+      "id": 41,
+      "name": "Fashion & Style - Trends",
+      "followers": "2.3K followers",
+      "titles": "Fashion & Style Updates on Men & Women - Latest Trends/News/Clothing & Apparel"
+    },
+    {
+      "id": 42,
+      "name": "Free knowledge Space",
+      "followers": "4 followers",
+      "titles": "If you join my space I teach you how to earn money without investing jai mahakal"
+    },
+    {
+      "id": 43,
+      "name": "Saint Dr. MSG Fans World",
+      "followers": "1.3K followers",
+      "titles": "Fans of Saint Dr. Gurmeet Ram Rahim Singh Ji Insan all over the world"
+    },
+    {
+      "id": 44,
+      "name": "Bollywood Music",
+      "followers": "13.4K followers",
+      "titles": "All Bollywood - Music/Songs/Golden old Hits/Latest Songs/Heart touching songs"
+    },
+    {
+      "id": 45,
+      "name": "YourStory's Startups",
+      "followers": "33.1K followers",
+      "titles": "Check out some of the startups that got featured on YourStory"
+    },
+    {
+      "id": 46,
+      "name": "The Club of Learners",
+      "followers": "380 followers",
+      "titles": "Related to studying, productivity, reading, writing, books, self esteem and more"
+    },
+    {
+      "id": 47,
+      "name": "Gds india post",
+      "followers": "4 followers",
+      "titles": "Department of post Government"
+    },
+    {
+      "id": 48,
+      "name": "Emirates Draw Results",
+      "followers": "1 follower",
+      "titles": "Business"
     }
   ]
 }
