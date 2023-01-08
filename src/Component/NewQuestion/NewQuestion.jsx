@@ -1,6 +1,6 @@
 import Styles from "./NewQuestion.module.css";
 import { useRef } from "react";
-
+import { questions as url } from "../../Api/Url";
 export default function NewQuestion({ setTrigger }) {
   const questionRef = useRef();
   const categoryRef = useRef();
@@ -15,7 +15,7 @@ export default function NewQuestion({ setTrigger }) {
       answers: []
     };
 
-    fetch(`http://localhost:3000/questions`, {
+    fetch(`${url}`, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",

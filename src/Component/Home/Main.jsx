@@ -2,23 +2,23 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import SinglePost from "./SinglePost";
-import { succ, req, fail } from "../component/redux/action";
-import { store } from "../component/redux/store";
+import { succ, req, fail } from "../Home/redux/action";
+import Store from "../../Store";
 import { useSelector } from "react-redux";
 
 function Main() {
   useEffect(() => {
-    store.dispatch(req());
+    Store.dispatch(req());
     fetch(`https://kind-gold-dove-belt.cyclic.app/posts`)
       .then((res) => res.json())
       .then((data) => {
-        store.dispatch(succ(data));
+        Store.dispatch(succ(data));
       })
-      .catch((err) => store.dispatch(fail()));
+      .catch((err) => Store.dispatch(fail()));
   }, []);
 
   const reduxdata = useSelector((store) => {
-    return store;
+    return store.post;
   });
 
   return (

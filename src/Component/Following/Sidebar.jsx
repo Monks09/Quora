@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+import Footer from "../Home/Footer";
 import Sidebar_Button from "./Sidebar_Button";
 
 function Sidebar() {

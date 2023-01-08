@@ -1,4 +1,3 @@
-import styles from "./Home.module.css";
 import { useState } from "react";
 import Create from "../Create/Create";
 import Popup from "../Popup/Popup";
@@ -8,7 +7,7 @@ export default function Post() {
   const [popupdata, setPopupData] = useState("question");
 
   return (
-    <div className={styles.Home}>
+    <div>
       <Create
         trigger={createPopup}
         setTrigger={setCreatePopup}

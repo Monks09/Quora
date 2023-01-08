@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import styles from "./AnswerPopup.module.css";
 import { useDispatch } from "react-redux";
 import answerThunkActionCreater from "../../Redux/Answer/answerThunkAction";
+import { questions } from "../../Api/Url";
 
 export default function AnswerPopup({ ques_id, setAnsPopup }) {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export default function AnswerPopup({ ques_id, setAnsPopup }) {
       no_of_answers,
     };
 
-    fetch(`http://localhost:3000/questions/${ques_id}`, {
+    fetch(`${questions}/${ques_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "Application/json",
@@ -35,7 +36,7 @@ export default function AnswerPopup({ ques_id, setAnsPopup }) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        dispatch(answerThunkActionCreater("http://localhost:3000/questions"));
+        dispatch(answerThunkActionCreater(`${questions}`));
       })
       .catch((err) => console.log(err));
   };

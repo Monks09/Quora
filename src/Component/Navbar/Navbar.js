@@ -28,9 +28,9 @@ function Navbar() {
 
             <Link className="qHeader__icon"  to={'/answer'}> <AssignmentTurnedInIcon /></Link>
 
-            <Link className="qHeader__icon"  to={'/'}> <PeopleAltIcon /></Link>
+            <Link className="qHeader__icon" > <PeopleAltIcon /></Link>
             
-            <Link className="qHeader__icon"  to={'/'}> <NotificationsNoneIcon /></Link>
+            <Link className="qHeader__icon" > <NotificationsNoneIcon /></Link>
         
       </div>
       <div className="qHeader__input">

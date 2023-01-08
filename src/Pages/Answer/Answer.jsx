@@ -1,9 +1,9 @@
 import styles from "./Answer.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import answerThunkActionCreater from '../../Redux/Answer/answerThunkAction';
+import answerThunkActionCreater from "../../Redux/Answer/answerThunkAction";
 import Question from "../../Component/Question/Question";
-
+import {questions} from "../../Api/Url"
 export default function Answer() {
   const dispatch = useDispatch();
   const data = useSelector((storeData) => {
@@ -11,7 +11,7 @@ export default function Answer() {
   });
 
   useEffect(() => {
-    dispatch(answerThunkActionCreater(" http://localhost:3000/questions"));
+    dispatch(answerThunkActionCreater(`${questions}`));
   },[dispatch]);
 
   return (

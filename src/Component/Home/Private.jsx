@@ -6,7 +6,7 @@ import SinglePost from "./SinglePost";
 function Private() {
   const { url } = useParams();
   const reduxdata = useSelector((store) => {
-    return store;
+    return store.post;
   });
   console.log(url, reduxdata);
   return (

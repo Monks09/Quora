@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../SinglePost.css";
+import "./SinglePost.css";
 function SinglePost({
   id,
   postid,
@@ -55,7 +55,7 @@ function SinglePost({
       </div>
       <div className="SinglePost-body">
         <div>
-          <NavLink to={`/answer/${id}`}>
+          <NavLink to={`/post/${id}`}>
             <h3 className="black">{topic}</h3>
           </NavLink>
           <span>{body}</span>

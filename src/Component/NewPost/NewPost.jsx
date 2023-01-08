@@ -1,6 +1,6 @@
 import styles from "./NewPost.module.css";
 import { useRef } from "react";
-
+import { post as url } from "../../Api/Url";
 export default function NewPost() {
   const postRef = useRef();
 
@@ -19,7 +19,7 @@ export default function NewPost() {
       shares: "0",
     };
 
-    fetch(` http://localhost:3000/posts`, {
+    fetch(`${url}`, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",

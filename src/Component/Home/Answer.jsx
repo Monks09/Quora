@@ -8,7 +8,7 @@ function Answer() {
   const { id } = useParams();
 
   const data = useSelector((store) => {
-    return store.post[0];
+    return store.post.post[0];
   });
   const newdata = data[id];
   // console.log(id);
