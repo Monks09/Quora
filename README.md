@@ -13,5 +13,20 @@ src-
           HomeRedux
                   -Homeactions.js
                   -Homeredusers.js
+
+
+
+
+                  
+         <!--
+         
+         {email:""
+         name:""
+         password:
+         following_topics:[]
+         following_channels:[]
+         login:false}
+         
+         -->
     
 following this file structure

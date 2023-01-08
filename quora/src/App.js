@@ -1,8 +1,9 @@
-import Following from "./Pages/Folllowing/Following";
+import Following from './Pages/Following';
+
 function App() {
   return (
     <div className="App">
-    
+      <Following/>
     </div>
   );
 }
