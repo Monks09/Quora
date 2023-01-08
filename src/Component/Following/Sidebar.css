@@ -1,4 +1,15 @@
+a {
+  text-decoration: none;
+}
+.App {
+  width: 60%;
+  margin: auto;
+}
 
+.home {
+  display: grid;
+  grid-template-columns: 180px 600px;
+}
 @media screen and (max-device-width: 1024px) {
   .home {
     display: flex;
@@ -23,6 +34,9 @@
   .footer {
     margin: 50px 0;
   }
+  .ad {
+    display: none;
+  }
 }
 .sidebar > div:first-child {
   display: flex;
@@ -43,6 +57,10 @@
 }
 .ad {
   position: fixed;
+  left: 74rem;
+  width: 11%;
+  height: 100vh;
+  margin-left: 2px;
 }
 .footer {
   flex-direction: row !important;
@@ -50,16 +68,25 @@
   flex-wrap: wrap;
   gap: 10px;
   padding: 0 5px;
-  margin-top: 50px;
+  font-size: 12px;
+  margin-top: 30px;
 }
 .footer a:hover {
   border-bottom: 1px solid;
 }
-a {
-  text-decoration: none;
-}
 .Sidebar_Button:hover {
   background-color: aliceblue;
+}
+.Sidebar_Button a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.Sidebar_Button img {
+  border-radius: 5px;
 }
 .Sidebar_Button {
   display: flex;
@@ -70,11 +97,12 @@ a {
 }
 .black {
   color: black;
+  font-size: 16px;
 }
 
 .sidebar {
   position: fixed;
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 180px;
 }
