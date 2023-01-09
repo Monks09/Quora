@@ -1,17 +1,37 @@
 import styles from "./Login.module.css";
-import { useContext, useRef } from "react";
-import loginContext from "../../Components/Context/Context";
-
+import { useContext, useRef,useState } from "react";
+import { user } from "../../Api/Url";
+import { json, Navigate, useNavigate } from "react-router-dom";
 export default function Login() {
-  const { fnLoggedIn } = useContext(loginContext);
+  const [Login, setLogin] = useState(false)
   const emailRef = useRef();
   const passwordRef = useRef();
-
+let Navigate=  useNavigate()
+  if(Login){
+    Navigate('/')
+  }
   let loginUser = () => {
+   
     if (emailRef.current.value && passwordRef.current.value) {
-      fnLoggedIn({
-        isLoggedIn: true,
-        user: emailRef.current.value,
+      fetch(`${user}?email=${emailRef.current.value}`).then((res) => {
+        res.json().then((res) => {
+          if (res.length > 0) {
+            console.log(passwordRef.current.value)
+            if (res[0].password == passwordRef.current.value) {
+              let obj={...res[0],login: true}
+              const id=res[0].id
+              fetch(`${user}/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body:JSON.stringify(obj)
+              }).then((res)=>{
+                res.json().then((res)=>{
+                  setLogin(true)
+                })
+              });
+            }
+          }
+        });
       });
     }
   };

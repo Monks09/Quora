@@ -7,16 +7,38 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import ArticleIcon from "@mui/icons-material/Article";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import loginContext from "../Context/Context";
-
+import Post from "../Home/Post";
+import { Button } from "@chakra-ui/react";
+import { user } from "../../Api/Url";
 function Navbar() {
-  const { state } = useContext(loginContext);
-  // const [input, setInput] = useState("");
-  // const [inputUrl, setInputUrl] = useState("");
-
-  return state.isLoggedIn ? (
+  const [Login, setLogin] = useState(false)
+let Navigate=  useNavigate()
+  if(Login){
+    
+  }
+  function AddQuestion(){
+   
+  }
+  function Logout(){
+    fetch(`${user}?login=true`).then((res) => {
+      res.json().then((res) => {
+            let obj={...res[0],login: false}
+            const id=res[0].id
+            fetch(`${user}/${id}`, {
+              method: "PATCH",
+              headers: { "Content-Type": "application/json" },
+              body:JSON.stringify(obj)
+            }).then((res)=>{
+              res.json().then((res)=>{
+                setLogin(true)
+              })
+            });
+      });
+    });
+            }
+  return (
     <div className="qHeader">
       <Link className="qHeader__logo" to={"/"}>
         <img
@@ -64,11 +86,10 @@ function Navbar() {
           ></img>
         </div>
         <LanguageIcon />
-        <button>Add Question</button>
+        <button onClick={AddQuestion}>Add Question</button>
+        <Button onClick={Logout}>Logout</Button>
       </div>
     </div>
-  ) : (
-    ""
   );
 }
 

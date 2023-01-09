@@ -32,13 +32,13 @@ function Following(props) {
     }
     }, []);
   return (
-    <Grid display={["none", "flex"]} bg={"rgb(241 242 242)"}>
+    <Grid display={["none", "flex"]} >
       <GridItem w={"25%"}>
         <Box display={'flex'} justifyContent={'end'}>
           <Sidebar />
         </Box>
       </GridItem>
-      <GridItem bg={"white"}>
+      <GridItem  boxShadow='md' p='6' rounded='md' bg='white'>
         {LogedinUser.Followers>0?<Main/>:<Box>
         <MidFollowingList />
         <Text fontSize={"36px"} m={"40px"} mb={"0px"}>
@@ -48,7 +48,7 @@ function Following(props) {
           Spaces you might like
         </Text>
         {State.map((el) => {
-          return <Followers data={el} setLogedinUser={setLogedinUser}/>;
+          return <Followers  data={el} setLogedinUser={setLogedinUser}/>;
         })
       }
       </Box>}

@@ -7,7 +7,7 @@ import { Adddata, Logedinuser } from "./Allfun";
 function Followers({data,setLogedinUser}) {
   return (
     <div style={{margin:'20px',}}>
-          <Box p={"25px"}  display={'flex'} gap={'50px'} border={'ActiveBorder'}>
+          <Box p={"25px"}  display={'flex'} gap={'50px'}  boxShadow='xl' rounded='md' bg='white' border={'ActiveBorder'}>
             <Box>
               <Image
                 w={"50px"}
