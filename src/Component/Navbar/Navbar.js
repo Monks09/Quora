@@ -8,30 +8,35 @@ import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import ArticleIcon from "@mui/icons-material/Article";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import loginContext from "../Context/Context";
+
 function Navbar() {
+  const { state } = useContext(loginContext);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
-  return (
+
+  return state.isLoggedIn ? (
     <div className="qHeader">
-      
-        <Link className ='qHeader__logo' to = {'/'}>
+
+      <Link className='qHeader__logo' to={'/'}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
           alt=""
         />
-         </Link>
-       
+      </Link>
+
       <div className="qHeader__icons">
-            <Link className="active qHeader__icon" to={'/'}><Home /></Link>
-        
-            <Link className="qHeader__icon"  to={'/following'}> <ArticleIcon /></Link>
+        <Link className="active qHeader__icon" to={'/'}><Home /></Link>
 
-            <Link className="qHeader__icon"  to={'/answer'}> <AssignmentTurnedInIcon /></Link>
+        <Link className="qHeader__icon" to={'/following'}> <ArticleIcon /></Link>
 
-            <Link className="qHeader__icon" > <PeopleAltIcon /></Link>
-            
-            <Link className="qHeader__icon" > <NotificationsNoneIcon /></Link>
-        
+        <Link className="qHeader__icon" to={'/answer'}> <AssignmentTurnedInIcon /></Link>
+
+        <Link className="qHeader__icon" > <PeopleAltIcon /></Link>
+
+        <Link className="qHeader__icon" > <NotificationsNoneIcon /></Link>
+
       </div>
       <div className="qHeader__input">
         <SearchIcon />
@@ -49,7 +54,7 @@ function Navbar() {
         <button>Add Question</button>
       </div>
     </div>
-  );
+  ) : ( "" );
 }
 
 export default Navbar;
