@@ -1,32 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Login from "./Component/Login";
-import { login, logout, selectUser } from "./userSlice";
-import { auth } from "./firebase";
-
-
+import './App.css';
+import Allroutes from './Component/Allroutes';
 function App() {
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        dispatch(login({
-            uid: authUser.uid,
-            email: authUser.email,
-            displayName: authUser.displayName,
-            
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-      console.log(authUser);
-    });
-  }, [dispatch]);
-  return <div className="App">
-    {user ? <Login /> : null}
-    </div>;
+  return (
+    <div className="App">
+      <Allroutes/>
+    </div>
+  )
 }
 
 export default App;
+// json-server --watch db.json --port 2000
