@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Input from "./Input";
 import "./SinglePost.css";
 function SinglePost({
   id,
@@ -17,7 +18,6 @@ function SinglePost({
 }) {
   const [state, setState] = useState(vote);
   const [input, setInput] = useState(false);
-  console.log("id", id);
   const handle = () => {
     fetch(`https://kind-gold-dove-belt.cyclic.app/posts/${postid}`, {
       method: "PATCH",
@@ -68,12 +68,13 @@ function SinglePost({
           <i class="fa-regular fa-thumbs-down"></i>
         </button>
         <span onClick={change}>
-          <i class="fa-regular fa-comment"></i> {comment}
+          <i class="fa-regular fa-comment"></i> {comment || 0}
         </span>
         <span>
           <i class="fa-solid fa-retweet"></i> {view}
         </span>
       </div>
+      {input ? <Input id={postid} /> : ""}
     </div>
   );
 }

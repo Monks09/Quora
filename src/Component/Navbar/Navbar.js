@@ -13,13 +13,12 @@ import loginContext from "../Context/Context";
 
 function Navbar() {
   const { state } = useContext(loginContext);
-  const [input, setInput] = useState("");
-  const [inputUrl, setInputUrl] = useState("");
+  // const [input, setInput] = useState("");
+  // const [inputUrl, setInputUrl] = useState("");
 
   return state.isLoggedIn ? (
     <div className="qHeader">
-
-      <Link className='qHeader__logo' to={'/'}>
+      <Link className="qHeader__logo" to={"/"}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
           alt=""
@@ -27,16 +26,29 @@ function Navbar() {
       </Link>
 
       <div className="qHeader__icons">
-        <Link className="active qHeader__icon" to={'/'}><Home /></Link>
+        <Link className="active qHeader__icon" to={"/"}>
+          <Home />
+        </Link>
 
-        <Link className="qHeader__icon" to={'/following'}> <ArticleIcon /></Link>
+        <Link className="qHeader__icon" to={"/following"}>
+          {" "}
+          <ArticleIcon />
+        </Link>
 
-        <Link className="qHeader__icon" to={'/answer'}> <AssignmentTurnedInIcon /></Link>
+        <Link className="qHeader__icon" to={"/answer"}>
+          {" "}
+          <AssignmentTurnedInIcon />
+        </Link>
 
-        <Link className="qHeader__icon" > <PeopleAltIcon /></Link>
+        <Link className="qHeader__icon">
+          {" "}
+          <PeopleAltIcon />
+        </Link>
 
-        <Link className="qHeader__icon" > <NotificationsNoneIcon /></Link>
-
+        <Link className="qHeader__icon">
+          {" "}
+          <NotificationsNoneIcon />
+        </Link>
       </div>
       <div className="qHeader__input">
         <SearchIcon />
@@ -48,13 +60,16 @@ function Navbar() {
             style={{ width: "40px", height: "40px", borderRadius: "25px" }}
             className="Avatar"
             alt="Remy Sharp"
-            src="https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"></img>
+            src="https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+          ></img>
         </div>
         <LanguageIcon />
         <button>Add Question</button>
       </div>
     </div>
-  ) : ( "" );
+  ) : (
+    ""
+  );
 }
 
 export default Navbar;

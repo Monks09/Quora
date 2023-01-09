@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 import Navbar from "./Component/Navbar/Navbar";
 import Allroutes from "./Component/Allroutes";
-import loginContext from './Components/Context/Context';
+import loginContext from "./Components/Context/Context";
 function App() {
-  
   const [state, setState] = useState({
     isLoggedIn: false,
     user: "Guest User",
@@ -24,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <loginContext.Provider value={{ state, fnLoggedIn, fnLoggedOut }}>
-      <Navbar />
-      <Allroutes />
+        <Navbar />
+        <Allroutes />
       </loginContext.Provider>
     </div>
   );
