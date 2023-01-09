@@ -23,7 +23,7 @@ export default function ComentList({ id }) {
               height="50px"
             />
             <div>
-              <span>roshan kumar</span>
+              <span>Dummy</span>
               <p>{el.comment}</p>
             </div>
           </div>
