@@ -1,40 +1,44 @@
 import React, { useState } from "react";
 import "./Login.css";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { auth, provider } from "../../firebase";
-
+import { user } from "../../Api/Url";
+import { Navigate } from "react-router-dom";
+import { useToast,toast } from '@chakra-ui/react'
 function Login() {
+  const toast = useToast()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  function errorToast(data){
+   return toast({
+      title: data,
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+    })
+  }
   const signIn = () => {
-    auth.signInWithPopup(provider).catch((e) => {
-      alert(e.message);
-    });
+    
   };
 
   const handleSignIn = (e) => {
     e.preventDefault();
-
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        console.log(auth);
+    fetch(`${user}/?email=${email}`).then((res)=>{
+      res.json().then((res)=>{
+        if(res.length>0){
+          if(res.password==password){
+           
+          }
+        }
+        else{
+          errorToast("please create Account first");
+        }
       })
-      .catch((e) => alert(e.message));
+    })
   };
 
   const registerSignIn = (e) => {
     e.preventDefault();
-
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          console.log(auth);
-        }
-      })
-      .catch((e) => alert(e.message));
+     <Navigate to={'/signin'}/>
   };
   return (
     <div className="login">
@@ -57,7 +61,9 @@ function Login() {
                 src="https://media-public.canva.com/MADnBiAubGA/3/screen.svg"
                 alt=""
               />
-              <p onClick={signIn}>Continue With Google</p>
+              <p 
+              // onClick={signIn}
+              >Continue With Google</p>
             </div>
             <div className="login__authOption">
               <img
