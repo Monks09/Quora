@@ -1,11 +1,13 @@
 import styles from "./Login.module.css";
-import { useContext, useRef } from "react";
-import loginContext from "../../Components/Context/Context";
+import { useContext, useRef, useState } from "react";
+import loginContext from "../../Component/Context/Context";
+import SignupPopup from "../../Component/SignupPopup/SignupPopup";
 
 export default function Login() {
   const { fnLoggedIn } = useContext(loginContext);
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [signup, setSignup] = useState(false);
 
   let loginUser = () => {
     if (emailRef.current.value && passwordRef.current.value) {
@@ -46,7 +48,13 @@ export default function Login() {
               />
               Continue with Facebook
             </div>
-            <div>Sign up with email</div>
+            <div
+              onClick={() => {
+                setSignup(true);
+              }}
+            >
+              Sign up with email
+            </div>
           </div>
           <div>
             <h4>Login</h4>
@@ -84,6 +92,8 @@ export default function Login() {
           About . Careers . PrivacyTerms . Contact . Languages . Your Ad Choices
           . Press© . Quora, Inc. 2023
         </div>
+
+        <SignupPopup signup={signup} setSignup={setSignup} />
       </div>
     </div>
   );
