@@ -1,13 +1,33 @@
+import { useState } from "react";
 import "./App.css";
+import Navbar from "./Component/Navbar/Navbar";
 import Allroutes from "./Component/Allroutes";
-import Input from "./Component/Home/Input";
+import loginContext from "./Components/Context/Context";
 function App() {
+  const [state, setState] = useState({
+    isLoggedIn: false,
+    user: "Guest User",
+  });
+
+  const fnLoggedIn = (data) => {
+    setState(data);
+  };
+
+  const fnLoggedOut = () => {
+    setState({
+      isLoggedIn: false,
+      user: "Guest User",
+    });
+  };
+
   return (
     <div className="App">
-      <Allroutes />
+      <loginContext.Provider value={{ state, fnLoggedIn, fnLoggedOut }}>
+        <Navbar />
+        <Allroutes />
+      </loginContext.Provider>
     </div>
   );
 }
 
 export default App;
-// json-server --watch db.json --port 2000
