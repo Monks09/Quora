@@ -22,19 +22,17 @@ function Allroutes() {
             }
         })
     })
-    }, [Log])
+    }, [])
     
   return (
     <div>
-      {Log?<Navbar/>:null}
-      
       <Routes>
         <Route path="/login" element={<Login/>} />
         <Route
           path="/"
           element={
             <PrivateRoute>
-              <Home />
+              <><Navbar/><Home/></>
              </PrivateRoute>
           }
         />
@@ -42,7 +40,8 @@ function Allroutes() {
           path="/answer"
           element={
             <PrivateRoute>
-              <Answer />
+               <><Navbar/><Answer /></>
+              
             </PrivateRoute>
           }
         />
@@ -50,15 +49,19 @@ function Allroutes() {
           path="/following"
           element={
             <PrivateRoute>
-              <Following />
+               <><Navbar/><Following /></>
+              
             </PrivateRoute>
           }
         />
         <Route
           path="/private/:url"
           element={
-           
-              <Private />
+            <PrivateRoute>
+
+              <><Navbar/><Private /></>
+            </PrivateRoute>
+              
             
           }
         />

@@ -32,7 +32,7 @@ let Navigate=  useNavigate()
               body:JSON.stringify(obj)
             }).then((res)=>{
               res.json().then((res)=>{
-                setLogin(true)
+               Navigate('/login')
               })
             });
       });

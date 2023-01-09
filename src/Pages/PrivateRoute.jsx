@@ -14,9 +14,8 @@ function PrivateRoute({children}) {
             }
         })
     })
-    }, [])
-    
-    
+    }, [Login])
+      
 if(Login==true){
     return children
 }
