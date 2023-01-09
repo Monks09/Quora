@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import { useRef } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./SinglePost.css";
@@ -17,7 +15,6 @@ function SinglePost({
   vote,
   comment,
 }) {
-  const ref = useRef();
   const [state, setState] = useState(vote);
   const [input, setInput] = useState(false);
   console.log("id", id);

@@ -1,7 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import { useEffect } from "react";
 import SinglePost from "./SinglePost";
+import Post from "./Post";
 import { succ, req, fail } from "../Home/redux/action";
 import Store from "../../Store";
 import { useSelector } from "react-redux";
@@ -23,7 +23,7 @@ function Main() {
 
   return (
     <div className="main">
-      {console.log()}
+      <Post />
       {reduxdata.isLoading
         ? "Loading..."
         : reduxdata.post[0]?.map((el, i) => {

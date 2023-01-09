@@ -6,7 +6,7 @@
 .SinglePost {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 10px;
-  z-index: 10000;
+  z-index: 10;
 }
 .SinglePost-head {
   display: flex;

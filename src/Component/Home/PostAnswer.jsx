@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Ad from "./Ad";
 import SinglePost from "./SinglePost";
 
-function Answer() {
+function PostAnswer() {
   const { id } = useParams();
 
   const data = useSelector((store) => {
@@ -42,14 +40,8 @@ function Answer() {
           comment={newdata.comments}
         />
       </div>
-      <img
-        src="https://th.bing.com/th/id/OIP.tJZBKSjaY-BnKdg9SMvS0QHaJl?pid=ImgDet&rs=1"
-        alt="ad"
-        width="500px"
-        height="300px"
-      />
     </div>
   );
 }
 
-export default Answer;
+export default PostAnswer;
