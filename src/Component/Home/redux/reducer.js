@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
     case GET_POST_DATA_REQUEST:
       return { ...state, isLoading: true };
     case GET_POST_DATA_SUCCESS:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
         isLoading: false,

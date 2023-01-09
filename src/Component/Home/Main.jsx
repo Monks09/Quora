@@ -41,7 +41,7 @@ function Main() {
                 date={el.date}
                 view={el.views}
                 vote={el.upvotes}
-                comment={el.comments}
+                comment={el.post_no_of_comment}
               />
             );
           })}
