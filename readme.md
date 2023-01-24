@@ -1,11 +1,11 @@
 <h1>Quora-PROJECT</h1>
 <p>Quora  website</p>
-<img width="1500" src="https://roshan-portfolio1.netlify.app/nn.jpg" alt="">
+<img width="1500" src="https://roshan-portfolio1.netlify.app/qua.png" alt="">
 <h1>WELCOME ✨</h1>
 <p>About Quora</p>
-<p></p>
+<p>It's A Platform to ask questions and connect with People who contribute unique insights and quality answers.</p>
 <h4>About this project</h4>
-<a target="_blank" href="">Netlify Link</a>
+<a target="_blank" href="https://heartfelt-llama-580bb7.netlify.app/login/">Netlify Link</a>
 
 <h1>Contributers:</h1>
 <ul>
