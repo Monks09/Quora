@@ -22,13 +22,8 @@
 <h1>Pages & Features</h1>
 <ul> 
   <li>Landing Page: Navbars,Post ans Answer Component, All posts,Banner,Filters.</li>
-  <li>Answer Page: .</li>
-  <li>Post Page : </li>
-  <li>Follow Page:</li>
+  <li>Answer Page: Were we can see all answers .</li>
+  <li>Post Page :were we can create a post </li>
+  <li>Follow Page: were we can follow any one from the list </li>
 </ul>
-<h1>HOW TO USE ✅</h1>
-<ul>
-  <li>At First user has to click on user icon on navbar to login on landing page. User have to register if he does not have an account. In signup page user has to fill all the fields in the form.</li>
-  <li>After signup user has to login with same details, otherwise it will show invalid credentials.After login user will be redirected to home page.</li>
-  
-</ul>
+
