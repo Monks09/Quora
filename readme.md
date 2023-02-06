@@ -11,12 +11,15 @@
 <ul>
   <li>Roshan Kumar</li>
 </ul>
+<ul>
+  <li>Nagendra Choudhary</li>
+</ul>
 <h1>Tech Stack :</h1>
 <ul> 
   <li>Html</li>
   <li>Css</li>
   <li>Javascript</li>
-  <li>Reaact</li>
+  <li>React</li>
 </ul>
   
 <h1>Pages & Features</h1>
