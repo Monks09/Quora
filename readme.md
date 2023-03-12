@@ -14,6 +14,12 @@
 <ul>
   <li>Nagendra Choudhary</li>
 </ul>
+<ul>
+  <li>Mayank Sharma</li>
+</ul>
+<ul>
+  <li>Nitesh Lanjewar</li>
+</ul>
 <h1>Tech Stack :</h1>
 <ul> 
   <li>Html</li>
