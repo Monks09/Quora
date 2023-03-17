@@ -1,12 +1,13 @@
 import "./App.css";
-import Allroutes from "./Component/Allroutes";
-import Navbar from "./Component/Navbar/Navbar";
+import AllRoutes from "./Components/AllRoutes";
+import Navbar from "./Components/Navbar/Navbar";
 function App() {
-  const token = localStorage.getItem("token");
+  let token = localStorage.getItem("token");
+  
   return (
     <div className="App">
       {token ? <Navbar /> : null}
-      <Allroutes />
+      <AllRoutes />
     </div>
   );
 }

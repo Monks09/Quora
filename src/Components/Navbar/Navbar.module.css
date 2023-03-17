@@ -1,0 +1,40 @@
+.Navbar {
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    padding: 0px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.quoraLogo {
+    width: 100px;
+}
+
+.routeIcons {
+    width: 30px;
+}
+
+.userImage {
+    width: 20px;
+    border-radius: 50%;
+}
+
+#searchBox {
+    border: 2px solid grey;
+    padding: 5px;
+}
+
+#quora_plus_button {
+    border: 1px solid grey;
+    padding: 3px;
+    border-radius: 18px;
+}
+
+#add_question_button {
+    background-color: rgb(185, 43, 39);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 18px;
+}
