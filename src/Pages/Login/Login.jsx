@@ -1,47 +1,89 @@
 import styles from "./Login.module.css";
-import { useContext, useRef,useState } from "react";
-import { user } from "../../Api/Url";
-import { json, Navigate, useNavigate } from "react-router-dom";
-import loginContext from "../../Component/Context/Context";
-import SignupPopup from "../../Component/SignupPopup/SignupPopup";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import {
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Input,
+} from "@chakra-ui/react";
 
 export default function Login() {
-  const [Login, setLogin] = useState(false)
-  const emailRef = useRef();
-  const passwordRef = useRef();
-let Navigate=  useNavigate()
-  if(Login){
-    Navigate('/')
-  }
-  const [signup, setSignup] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [signupData, setSignupData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-  let loginUser = () => {
-   
-    if (emailRef.current.value && passwordRef.current.value) {
-      fetch(`${user}?email=${emailRef.current.value}`).then((res) => {
-        res.json().then((res) => {
-          if (res.length > 0) {
-            console.log(passwordRef.current.value)
-            if (res[0].password == passwordRef.current.value) {
-              let obj={...res[0],login: true}
-              const id=res[0].id
-              fetch(`${user}/${id}`, {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body:JSON.stringify(obj)
-              }).then((res)=>{
-                res.json().then((res)=>{
-                  setLogin(true)
-                })
-              });
-            }
+  const [loginData, setloginData] = useState({
+    login_email: "",
+    login_password: "",
+  });
 
-          }
-          else{
-            
-          }
-        });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setSignupData({
+      ...signupData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async () => {
+    try {
+      let res = await fetch(`http://localhost:8080/users/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signupData),
       });
+      let data = await res.json();
+      console.log(data);
+      onClose();
+      alert("Signup Successful");
+    } catch (err) {
+      console.log(err);
+      alert("Signup failed");
+    }
+  };
+
+  let handleChangeLogin = (e) => {
+    setloginData({
+      ...loginData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  let loginUser = async () => {
+    try {
+      let userData = {
+        email: loginData.login_email,
+        password: loginData.login_password,
+      };
+
+      let res = await fetch(`http://localhost:8080/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      let data = await res.json();
+      localStorage.setItem("token", data.data.token);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      alert("Login failed");
     }
   };
 
@@ -75,31 +117,27 @@ let Navigate=  useNavigate()
               />
               Continue with Facebook
             </div>
-            <div
-              onClick={() => {
-                setSignup(true);
-              }}
-            >
+            <Button className={styles.signupModalButton} onClick={onOpen}>
               Sign up with email
-            </div>
+            </Button>
           </div>
           <div>
             <h4>Login</h4>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="login_email">Email</label>
             <input
               type="email"
-              name="email"
-              id="email"
+              name="login_email"
+              id="login_email"
               placeholder="Your email"
-              ref={emailRef}
+              onChange={handleChangeLogin}
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="login_password">Password</label>
             <input
               type="password"
-              name="password"
-              id="password"
+              name="login_password"
+              id="login_password"
               placeholder="Your password"
-              ref={passwordRef}
+              onChange={handleChangeLogin}
             />
             <div>
               <span>Forgot password?</span>
@@ -119,9 +157,52 @@ let Navigate=  useNavigate()
           About . Careers . PrivacyTerms . Contact . Languages . Your Ad Choices
           . Press© . Quora, Inc. 2023
         </div>
-
-        <SignupPopup signup={signup} setSignup={setSignup} />
       </div>
+      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Signup</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <div className={styles.signup_input}>
+              <label htmlFor="name">Name</label>
+              <Input
+                id="name"
+                name="name"
+                placeholder="What would you like to be called?"
+                onChange={handleChange}
+              ></Input>
+            </div>
+            <div className={styles.signup_input}>
+              <label htmlFor="email">Email</label>
+              <Input
+                id="email"
+                name="email"
+                placeholder="Your email"
+                onChange={handleChange}
+              ></Input>
+            </div>
+            <div className={styles.signup_input}>
+              <label htmlFor="password">Password</label>
+              <Input
+                id="password"
+                name="password"
+                placeholder="Your password"
+                onChange={handleChange}
+              ></Input>
+            </div>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant="ghost" onClick={handleSubmit}>
+              Submit
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }

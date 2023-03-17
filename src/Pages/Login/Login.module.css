@@ -1,18 +1,24 @@
 .Login {
-  background-image: url(https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png);
-  min-height: 100vh;
-  padding: 20px;
   position: absolute;
   right: 0;
   left: 0;
 }
 
+.Login::before {
+  content: "";
+  position: absolute;
+  background: url(https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png) no-repeat center center/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
 .LoginBox {
   background-color: white;
-  width: 50%;
-  margin: auto;
-  box-shadow: 0px 0px 10px black;
+  width: 60%;
+  margin: 20px auto;
   padding-top: 30px;
+  box-shadow: 0px 0px 10px black;
   border-radius: 5px;
   position: relative;
 }
@@ -22,13 +28,13 @@
   line-height: 30px;
 }
 
-.heading > div {
+.heading>div {
   color: grey;
   font-weight: bold;
 }
 
-.heading > img {
-  width: 25%;
+.heading>img {
+  width: 30%;
   padding: 0 20px;
   margin: auto;
 }
@@ -41,22 +47,22 @@
   padding-bottom: 20px;
 }
 
-.centerDiv > div {
+.centerDiv>div {
   padding: 20px;
 }
 
-.centerDiv > div:first-child {
+.centerDiv>div:first-child {
   border-right: 1px solid lightgray;
 }
 
-.centerDiv > div:first-child > p {
+.centerDiv>div:first-child>p {
   font-size: 14px;
   color: grey;
   margin-bottom: 20px;
 }
 
-.centerDiv > div:first-child > div:nth-child(2),
-.centerDiv > div:first-child > div:nth-child(3) {
+.centerDiv>div:first-child>div:nth-child(2),
+.centerDiv>div:first-child>div:nth-child(3) {
   border: 1px solid lightgrey;
   padding: 10px;
   margin: 10px 0px;
@@ -70,31 +76,31 @@
   width: 20px;
 }
 
-.centerDiv > div:first-child > div:last-child {
+.centerDiv>div:first-child>div:last-child {
   border: none;
   border-radius: 20px;
   padding: 5px;
   text-align: center;
 }
 
-.centerDiv > div:first-child > div:hover {
+.centerDiv>div:first-child>div:hover {
   cursor: pointer;
   background-color: rgb(217, 214, 214);
 }
 
-.centerDiv > div:last-child h4 {
+.centerDiv>div:last-child h4 {
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid lightgray;
 }
 
-.centerDiv > div:last-child label {
+.centerDiv>div:last-child label {
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.centerDiv > div:last-child input {
+.centerDiv>div:last-child input {
   display: block;
   width: 90%;
   padding: 10px;
@@ -102,14 +108,14 @@
   border: 1px solid lightgray;
 }
 
-.centerDiv > div:last-child > div:last-child {
+.centerDiv>div:last-child>div:last-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 }
 
-.centerDiv > div:last-child > div:last-child > button {
+.centerDiv>div:last-child>div:last-child>button {
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
@@ -117,12 +123,12 @@
   color: white;
 }
 
-.centerDiv > div:last-child > div:last-child > button:hover {
+.centerDiv>div:last-child>div:last-child>button:hover {
   cursor: pointer;
   background-color: rgb(89, 117, 202);
 }
 
-.centerDiv > div:last-child > div:last-child > span:hover {
+.centerDiv>div:last-child>div:last-child>span:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -138,4 +144,20 @@
   text-align: center;
   font-size: 15px;
   color: grey;
+}
+
+.signup_input {
+  margin: 20px 0px;
+}
+
+.signup_input label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.signupModalButton {
+  width: 100%;
+  font-size: 13px;
+  background-color: none;
+  border-radius: 10px;
 }

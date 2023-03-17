@@ -4,9 +4,9 @@ import Login from "../../Pages/Login/Login";
 import Home from "../Home/Home";
 
 export default function Auth() {
-    const { state } = useContext(loginContext);
+    const token = localStorage.getItem("token");
 
     return <div>
-        {state.isLoggedIn ? <Home /> : <Login />}
+        {token ? <Home /> : <Login />}
     </div>
 }

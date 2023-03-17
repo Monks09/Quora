@@ -10,6 +10,8 @@ import PrivateRoute from "../Pages/PrivateRoute";
 import Login from "../Pages/Login/Login";
 import { user } from "../Api/Url";
 import SingleQuestion from "../Pages/SingleQuestion/SingleQuestion";
+import PageNotFound from "../Pages/PageNotFound";
+
 function Allroutes() {
   const [Log, setLog] = useState("Loading");
   useEffect(() => {
@@ -32,10 +34,7 @@ function Allroutes() {
           path="/"
           element={
             <PrivateRoute>
-              <>
-                <Navbar />
-                <Home />
-              </>
+              <Home />
             </PrivateRoute>
           }
         />
@@ -43,10 +42,7 @@ function Allroutes() {
           path="/answer"
           element={
             <PrivateRoute>
-              <>
-                <Navbar />
-                <Answer />
-              </>
+              <Answer />
             </PrivateRoute>
           }
         />
@@ -54,10 +50,7 @@ function Allroutes() {
           path="/answer/:id"
           element={
             <PrivateRoute>
-              <>
-                <Navbar />
-                <SingleQuestion />
-              </>
+              <SingleQuestion />
             </PrivateRoute>
           }
         />
@@ -65,10 +58,7 @@ function Allroutes() {
           path="/following"
           element={
             <PrivateRoute>
-              <>
-                <Navbar />
-                <Following />
-              </>
+              <Following />
             </PrivateRoute>
           }
         />
@@ -76,15 +66,12 @@ function Allroutes() {
           path="/private/:url"
           element={
             <PrivateRoute>
-              <>
-                <Navbar />
-                <Private />
-              </>
+              <Private />
             </PrivateRoute>
           }
         />
         <Route path="/post/:id" element={<PostAnswer />} />
-        <Route path="*" element={<div>Page Not Found</div>} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

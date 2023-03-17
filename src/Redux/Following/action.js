@@ -1,8 +1,8 @@
-function addfollower(data,dispatch){
+function addfollower(data, dispatch) {
     dispatch(
         {
-            type:"DATA",
-            payload:data
+            type: "DATA",
+            payload: data
         }
     )
 }

@@ -5,12 +5,10 @@ import Sidebar from "./Sidebar";
 import "./Home.css";
 function Home() {
   return (
-    <div className="container">
-      <div className="home">
-        <Sidebar />
-        <div></div>
-        <Main />
-      </div>
+    <div className="home">
+      <Sidebar />
+      <div></div>
+      <Main />
       <Ad />
     </div>
   );

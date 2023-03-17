@@ -1,50 +1,42 @@
 import React from "react";
 import { useEffect } from "react";
 import SinglePost from "./SinglePost";
-import Post from "./Post";
-import { succ, req, fail } from "../Home/redux/action";
-import Store from "../../Store";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getContentThunkActionCreator } from "../../Redux/Actions/homeAction";
+import Create from "../Create/Create";
 
 function Main() {
-  useEffect(() => {
-    Store.dispatch(req());
-    fetch(`https://kind-gold-dove-belt.cyclic.app/posts`)
-      .then((res) => res.json())
-      .then((data) => {
-        Store.dispatch(succ(data));
-      })
-      .catch((err) => Store.dispatch(fail()));
-  }, []);
+  const dispatch = useDispatch();
 
-  const reduxdata = useSelector((store) => {
-    return store.post;
+  const content = useSelector((data) => {
+    return data.content;
   });
+
+  useEffect(() => {
+    dispatch(getContentThunkActionCreator());
+  }, []);
 
   return (
     <div className="main">
-      <Post />
-      {reduxdata.isLoading
-        ? "Loading..."
-        : reduxdata.post[0]?.map((el, i) => {
-            return (
-              <SinglePost
-                key={i}
-                id={i}
-                postid={el.postid}
-                name={el.username}
-                logo="https://th.bing.com/th/id/OIP.vR3c8gJDtTZuFFJLa3nHcwHaHC?pid=ImgDet&rs=1"
-                answer={`Answered by ${el.username}`}
-                topic={el.title}
-                body={el.description}
-                img={el.image}
-                date={el.date}
-                view={el.views}
-                vote={el.upvotes}
-                comment={el.post_no_of_comment}
-              />
-            );
-          })}
+      <Create />
+      {content.map((el, i) => {
+        return (
+          <SinglePost
+            key={i}
+            id={i}
+            postid={el._id}
+            name={el.author.name}
+            logo={el.author.avatar}
+            answer={`Answered by ${el.author.name}`}
+            topic={el.question.title}
+            body={el.body}
+            img={el.image}
+            view={el.views}
+            vote={el.upvotes}
+            comment={el.comments}
+          />
+        );
+      })}
     </div>
   );
 }
