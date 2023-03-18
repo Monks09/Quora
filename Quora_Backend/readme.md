@@ -1,1 +1,0 @@
-This is my backend repo for Quora project.
