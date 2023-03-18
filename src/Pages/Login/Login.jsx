@@ -14,6 +14,11 @@ import {
   ModalFooter,
   Input,
 } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import {
+  loginThunkActionCreator,
+  signupThunkActionCreator,
+} from "../../Redux/Actions/loginAction";
 
 export default function Login() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,6 +34,7 @@ export default function Login() {
   });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setSignupData({
@@ -38,22 +44,8 @@ export default function Login() {
   };
 
   const handleSubmit = async () => {
-    try {
-      let res = await fetch(`http://localhost:8080/users/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(signupData),
-      });
-      let data = await res.json();
-      console.log(data);
-      onClose();
-      alert("Signup Successful");
-    } catch (err) {
-      console.log(err);
-      alert("Signup failed");
-    }
+    dispatch(signupThunkActionCreator(signupData));
+    onClose();
   };
 
   let handleChangeLogin = (e) => {
@@ -64,27 +56,8 @@ export default function Login() {
   };
 
   let loginUser = async () => {
-    try {
-      let userData = {
-        email: loginData.login_email,
-        password: loginData.login_password,
-      };
-
-      let res = await fetch(`http://localhost:8080/users/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-
-      let data = await res.json();
-      localStorage.setItem("token", data.data.token);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-      alert("Login failed");
-    }
+    dispatch(loginThunkActionCreator(loginData));
+    navigate("/");
   };
 
   return (

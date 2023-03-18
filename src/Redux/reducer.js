@@ -1,11 +1,12 @@
 const initialState = {
     content: [],
-    questions: []
+    questions: [],
+    loggedInUser: null,
 }
 
 export default function reducer(state = initialState, { type, payload }) {
     switch (type) {
-        case "FETCH_CONTENT":
+        case "GET_CONTENT":
             return {
                 ...state,
                 content: payload,
@@ -14,6 +15,11 @@ export default function reducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 questions: payload,
+            }
+        case "LOGIN_USER":
+            return {
+                ...state,
+                loggedInUser: payload,
             }
         default:
             return state;

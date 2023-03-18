@@ -1,0 +1,111 @@
+.Create {
+  padding: 10px 10px 0px 10px;
+  background-color: white;
+  padding-bottom: 5px;
+  border: 1px solid lightgray;
+}
+
+.Create > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Create > div:nth-child(1) > button {
+  background-color: rgb(249, 246, 246);
+  color: grey;
+  width: 100%;
+  text-align: left;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  font-size: 15px;
+}
+
+.Create > div:nth-child(1) > button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.Create > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  margin: 5px 0px;
+}
+
+.Create > div:nth-child(2) > div {
+  padding: 5px;
+}
+
+.Create > div:nth-child(2) > div:hover {
+  cursor: pointer;
+  background-color: rgb(234, 234, 234);
+}
+
+.Create > div:nth-child(2) > div:nth-child(1),
+.Create > div:nth-child(2) > div:nth-child(2) {
+  border-right: 1px solid grey;
+}
+
+.Create img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.Create input {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.tipsDiv {
+  background-color: rgb(235,240,255);
+  color: rgb(46,105,255);
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.tipsDiv > ul > li {
+  margin-left: 18px;
+}
+
+.writeQuestionDiv > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.writeQuestionDiv button {
+  border: 1px solid lightgray;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.writeQuestionDiv img {
+  width: 20px;
+  border-radius: 50%;
+}
+
+.writeQuestionDiv input {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0px;
+  font-size: 18px;
+}
+
+.footerDiv {
+  margin-top: 50px;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}
+
+.footerDiv > button {
+  padding: 5px 10px;
+  border: 2px solid blue;
+}

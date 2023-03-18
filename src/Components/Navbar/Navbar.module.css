@@ -1,11 +1,25 @@
 .Navbar {
     background-color: white;
-    box-shadow: 0 0 10px black;
-    padding: 0px 50px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
+    padding: 0px 50px;
+}
+
+.navLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.navRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .quoraLogo {
@@ -14,6 +28,7 @@
 
 .routeIcons {
     width: 30px;
+    color: grey;
 }
 
 .userImage {
@@ -22,8 +37,9 @@
 }
 
 #searchBox {
-    border: 2px solid grey;
+    border: 1px solid lightgray;
     padding: 5px;
+    width: 350px;
 }
 
 #quora_plus_button {

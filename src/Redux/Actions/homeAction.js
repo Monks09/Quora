@@ -11,7 +11,7 @@ export const getContentThunkActionCreator = () => {
             .then((data) => {
                 console.log(data);
                 dispatch({
-                    type: "FETCH_CONTENT",
+                    type: "GET_CONTENT",
                     payload: data.content,
                 })
             })

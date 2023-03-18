@@ -1,0 +1,31 @@
+.Home {
+    width: 85%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2.5fr;
+    gap: 20px;
+}
+
+.ads {
+    background-color: white;
+    height: fit-content;
+}
+
+.ads img {
+    margin: 0px auto 10px;
+}
+
+.spaces {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    font-size: 13px;
+    color: grey;
+}
+
+.spaces>img {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
