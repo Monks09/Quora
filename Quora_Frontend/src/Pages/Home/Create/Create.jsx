@@ -1,5 +1,9 @@
 import styles from "./Create.module.css";
 import { Link } from "react-router-dom";
+import { SiAcademia } from "react-icons/si";
+import { AiOutlinePicture } from "react-icons/ai";
+import { useState } from "react";
+
 import {
   Button,
   useDisclosure,
@@ -16,10 +20,13 @@ import {
   TabPanels,
   TabPanel,
   Input,
+  IconButton,
 } from "@chakra-ui/react";
 
 export default function Create() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [defaultTabIndex, setDefaultTabIndex] = useState(0);
 
   return (
     <div className={styles.Create}>
@@ -28,10 +35,22 @@ export default function Create() {
           src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
           alt="user-img"
         />
-        <button onClick={onOpen}>What do you want to ask or share?</button>
+        <button
+          onClick={() => {
+            setDefaultTabIndex(0);
+            onOpen();
+          }}
+        >
+          What do you want to ask or share?
+        </button>
       </div>
       <div>
-        <div onClick={onOpen}>
+        <div
+          onClick={() => {
+            setDefaultTabIndex(0);
+            onOpen();
+          }}
+        >
           <i class="fa-regular fa-circle-question"></i> Ask
         </div>
         <div>
@@ -39,7 +58,12 @@ export default function Create() {
             <i class="fa-regular fa-pen-to-square"></i> Answer
           </Link>
         </div>
-        <div onClick={onOpen}>
+        <div
+          onClick={() => {
+            setDefaultTabIndex(1);
+            onOpen();
+          }}
+        >
           <i class="fa-solid fa-pen"></i> Post
         </div>
       </div>
@@ -48,7 +72,13 @@ export default function Create() {
         <ModalContent>
           <ModalCloseButton />
           <ModalBody>
-            <Tabs isFitted variant="line" mt="50px" size="md">
+            <Tabs
+              isFitted
+              variant="line"
+              mt="50px"
+              size="md"
+              defaultIndex={defaultTabIndex}
+            >
               <TabList>
                 <Tab>Add Question</Tab>
                 <Tab>Create Post</Tab>
@@ -79,13 +109,50 @@ export default function Create() {
                       placeholder='Start your question with "What", "How", "Why", etc.'
                     />
                   </div>
-                  <div className={styles.footerDiv}>
-                    <button>Cancel</button>
+                  <div className={styles.questionTabFooter}>
+                    <button onClick={onClose}>Cancel</button>
                     <button>Add question</button>
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  <p>two!</p>
+                  <div className={styles.userDiv}>
+                    <div>
+                      <img
+                        src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
+                        alt="user"
+                      />
+                    </div>
+                    <div>
+                      <p>
+                        <b>Mayank Sharma</b>
+                      </p>
+                      <button>Choose credential &gt;</button>
+                    </div>
+                  </div>
+                  <div className={styles.postTextDiv}>
+                    <textarea
+                      name="postText"
+                      id="postText"
+                      cols="80"
+                      rows="9"
+                      placeholder="Say something..."
+                    ></textarea>
+                  </div>
+                  <div className={styles.postTabFooter}>
+                    <div>
+                      <IconButton
+                        aria-label="text"
+                        backgroundColor="white"
+                        icon={<SiAcademia />}
+                      />
+                      <IconButton
+                        aria-label="text"
+                        backgroundColor="white"
+                        icon={<AiOutlinePicture />}
+                      />
+                    </div>
+                    <button>Post</button>
+                  </div>
                 </TabPanel>
               </TabPanels>
             </Tabs>
