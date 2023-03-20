@@ -1,0 +1,14 @@
+.spaces {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    font-size: 13px;
+    color: grey;
+}
+
+.spaces>img {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
