@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../Pages/Login/Login";
+import SingleQuestion from "../Pages/SingleQuestion/SingleQuestion";
 
 function AllRoutes(props) {
   return (
@@ -32,6 +33,14 @@ function AllRoutes(props) {
         element={
           <PrivateRoute>
             <Answer />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/answer/:id"
+        element={
+          <PrivateRoute>
+            <SingleQuestion />
           </PrivateRoute>
         }
       />
