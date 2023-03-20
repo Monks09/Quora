@@ -3,18 +3,20 @@ import { useState } from "react";
 import { useEffect } from "react";
 import SinglePost from "../Home/SinglePost";
 function Main() {
-const [State, setState] = useState([])
+  const [State, setState] = useState([]);
   useEffect(() => {
     fetch(`https://kind-gold-dove-belt.cyclic.app/posts`)
       .then((res) => res.json())
       .then((data) => {
-        setState(data)
-      })
+        setState(data);
+      });
   }, []);
 
   return (
     <div className="main">
-      {State.length==0?"....Loading":State.map((el, i) => {
+      {State.length == 0
+        ? "....Loading"
+        : State.map((el, i) => {
             return (
               <SinglePost
                 key={i}

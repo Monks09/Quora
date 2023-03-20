@@ -1,6 +1,7 @@
 import React from "react";
 import ReadMoreReadLess from "../ReadMoreReadLess/ReadMoreReadLess";
 import styles from "./Post.module.css";
+import { Link } from "react-router-dom";
 
 function Post({ postData }) {
   //   console.log(postData);
@@ -20,7 +21,9 @@ function Post({ postData }) {
       <div className={styles.postContent}>
         <div>
           <p>
-            <b>{question.title}</b>
+            <b>
+              <Link to={`/post/${postData._id}`}>{question.title}</Link>
+            </b>
           </p>
           <ReadMoreReadLess>{body}</ReadMoreReadLess>
         </div>

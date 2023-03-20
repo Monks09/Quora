@@ -7,6 +7,7 @@ import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../Pages/Login/Login";
 import SingleQuestion from "../Pages/SingleQuestion/SingleQuestion";
+import PostAnswer from "../Pages/PostAnswer/PostAnswer";
 
 function AllRoutes(props) {
   return (
@@ -17,6 +18,14 @@ function AllRoutes(props) {
         element={
           <PrivateRoute>
             <Home />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/post/:id"
+        element={
+          <PrivateRoute>
+            <PostAnswer />
           </PrivateRoute>
         }
       />

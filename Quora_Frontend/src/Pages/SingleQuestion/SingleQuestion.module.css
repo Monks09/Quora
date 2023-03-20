@@ -24,6 +24,7 @@
     width: 50px;
     border: none;
     border-radius: 50%;
+    margin: auto;
 }
 
 .innerDiv button {

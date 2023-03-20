@@ -1,0 +1,18 @@
+.PageNotFound {
+    width: 40%;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0 0 10px red;
+    text-align: center;
+}
+
+.PageNotFound > h1:first-child {
+    color: red;
+    font-size: 60px;
+}
+
+.PageNotFound > h1:last-child {
+    font-size: 30px;
+    font-weight: bold;
+}
+

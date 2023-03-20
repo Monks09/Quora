@@ -81,7 +81,10 @@ export default function SingleQuestion() {
           )}
         </div>
       </div>
-      <RelatedQuestions topic={question.topic} />
+      <RelatedQuestions
+        topic={question.topic}
+        currentQuestionId={question._id}
+      />
 
       <Modal isOpen={isOpen} onClose={onClose} size="2xl">
         <ModalOverlay />
