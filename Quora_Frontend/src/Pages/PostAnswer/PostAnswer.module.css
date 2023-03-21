@@ -1,0 +1,21 @@
+.Answer {
+    width: 60%;
+    margin: 50px auto;
+}
+
+.questionDiv {
+    box-shadow: 0 0 10px black;
+    padding: 20px;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.icons > div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}

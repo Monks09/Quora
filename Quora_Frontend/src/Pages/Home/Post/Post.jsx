@@ -5,7 +5,17 @@ import { Link } from "react-router-dom";
 
 function Post({ postData }) {
   //   console.log(postData);
-  const { body, image, author, question } = postData;
+  const {
+    body,
+    image,
+    author,
+    question,
+    upvotes,
+    downvotes,
+    comments,
+    shares,
+    views,
+  } = postData;
 
   return (
     <div className={styles.Post}>
@@ -27,7 +37,25 @@ function Post({ postData }) {
           </p>
           <ReadMoreReadLess>{body}</ReadMoreReadLess>
         </div>
-        <img src={image} alt="img" />
+        {image && <img src={image} alt="img" />}
+      </div>
+      <div className={styles.postFooter}>
+        <button>
+          <i class="fa-regular fa-thumbs-up"></i>&nbsp;&nbsp;
+          {upvotes}
+        </button>
+        <button>
+          <i class="fa-regular fa-thumbs-down"></i>&nbsp;&nbsp;
+          {downvotes}
+        </button>
+        <span>
+          <i class="fa-regular fa-comment"></i>&nbsp;&nbsp;
+          {comments}
+        </span>
+        <span>
+          <i class="fa-solid fa-retweet"></i>&nbsp;&nbsp;
+          {shares}
+        </span>
       </div>
     </div>
   );

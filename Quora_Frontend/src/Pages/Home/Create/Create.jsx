@@ -1,8 +1,9 @@
 import styles from "./Create.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SiAcademia } from "react-icons/si";
 import { AiOutlinePicture } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 import {
   Button,
@@ -22,11 +23,67 @@ import {
   Input,
   IconButton,
 } from "@chakra-ui/react";
+import { addNewPostThunkActionCreator, addNewQuestionThunkActionCreator } from "../../../Redux/Actions/createAction";
 
 export default function Create() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [defaultTabIndex, setDefaultTabIndex] = useState(0);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const quesDefault = {
+    quesTitle: "",
+    quesTopic: "",
+  };
+
+  const postDefault = {
+    body: "",
+    topic: "",
+  };
+
+  const [ques, setQues] = useState(quesDefault);
+
+  const [post, setPost] = useState(postDefault);
+
+  useEffect(() => {
+    // cleanup function
+    return () => {
+      setQues(quesDefault);
+      setPost(postDefault);
+    };
+  }, []);
+
+  const handleChange = (e) => {
+    setQues({
+      ...ques,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const addNewQuestion = async () => {
+    // console.log(ques);
+    let quesData = {
+      title: ques.quesTitle,
+      topic: ques.quesTopic,
+    };
+    dispatch(addNewQuestionThunkActionCreator(quesData));
+    navigate("/answer");
+  };
+
+  const handleChangePost = (e) => {
+    setPost({
+      ...post,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const addNewPost = () => {
+    // console.log(post);
+    dispatch(addNewPostThunkActionCreator(post));
+  };
 
   return (
     <div className={styles.Create}>
@@ -104,14 +161,47 @@ export default function Create() {
                       <i class="fa-solid fa-caret-right"></i>
                       <button>Public</button>
                     </div>
-                    <input
-                      type="text"
-                      placeholder='Start your question with "What", "How", "Why", etc.'
-                    />
+                    <div>
+                      <input
+                        type="text"
+                        name="quesTitle"
+                        placeholder='Start your question with "What", "How", "Why", etc.'
+                        onChange={handleChange}
+                      />
+                      <select
+                        name="quesTopic"
+                        id="quesTopic"
+                        onChange={handleChange}
+                      >
+                        <option value="">Select Topic</option>
+                        <option value="Science">Science</option>
+                        <option value="Health">Health</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Movies">Movies</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Geography">Geography</option>
+                        <option value="History">History</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="General Knowledge">
+                          General Knowledge
+                        </option>
+                        <option value="Psychology">Psychology</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Music">Music</option>
+                        <option value="Self Development">
+                          Self Development
+                        </option>
+                      </select>
+                    </div>
                   </div>
                   <div className={styles.questionTabFooter}>
                     <button onClick={onClose}>Cancel</button>
-                    <button>Add question</button>
+                    <button
+                      disabled={ques.quesTitle === "" || ques.quesTopic === ""}
+                      onClick={addNewQuestion}
+                    >
+                      Add question
+                    </button>
                   </div>
                 </TabPanel>
                 <TabPanel>
@@ -131,12 +221,31 @@ export default function Create() {
                   </div>
                   <div className={styles.postTextDiv}>
                     <textarea
-                      name="postText"
-                      id="postText"
+                      name="body"
+                      id="body"
                       cols="80"
-                      rows="9"
+                      rows="8"
                       placeholder="Say something..."
+                      onChange={handleChangePost}
                     ></textarea>
+                    <select name="topic" id="topic" onChange={handleChangePost}>
+                      <option value="">Select Topic</option>
+                      <option value="Science">Science</option>
+                      <option value="Health">Health</option>
+                      <option value="Fitness">Fitness</option>
+                      <option value="Movies">Movies</option>
+                      <option value="Technology">Technology</option>
+                      <option value="Geography">Geography</option>
+                      <option value="History">History</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="General Knowledge">
+                        General Knowledge
+                      </option>
+                      <option value="Psychology">Psychology</option>
+                      <option value="Sports">Sports</option>
+                      <option value="Music">Music</option>
+                      <option value="Self Development">Self Development</option>
+                    </select>
                   </div>
                   <div className={styles.postTabFooter}>
                     <div>
@@ -151,7 +260,12 @@ export default function Create() {
                         icon={<AiOutlinePicture />}
                       />
                     </div>
-                    <button>Post</button>
+                    <button
+                      onClick={addNewPost}
+                      disabled={post.body === "" || post.topic === ""}
+                    >
+                      Post
+                    </button>
                   </div>
                 </TabPanel>
               </TabPanels>

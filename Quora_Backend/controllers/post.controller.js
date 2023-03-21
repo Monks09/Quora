@@ -1,12 +1,11 @@
 const Post = require("../models/post.model");
 const User = require("../models/user.model");
 
-async function createPost({ title, body, image, topic }, author) {
+async function createPost({ body, image, topic }, author) {
 
     let user = await User.findById(author.id);
 
     let newPost = {
-        title,
         body,
         image,
         topic,
@@ -15,6 +14,7 @@ async function createPost({ title, body, image, topic }, author) {
             name: user.name,
             avatar: user.avatar,
         },
+        views: 1,
         upvotes: 0,
         downvotes: 0,
         comments: 0,

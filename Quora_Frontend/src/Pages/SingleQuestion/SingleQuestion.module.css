@@ -142,7 +142,7 @@
     padding-top: 10px;
 }
 
-.postTabFooter > div:nth-child(2) {
+.postTabFooter>div:nth-child(2) {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -158,4 +158,8 @@
 
 .postButton:hover {
     background-color: rgb(37, 89, 219);
+}
+
+.postButton:disabled {
+    opacity: 0.5;
 }

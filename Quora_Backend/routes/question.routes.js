@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllQuestions, createQuestion, giveAnswer, getQuestionById } = require("../controllers/question.controller");
+const { getAllQuestions, createQuestion, giveAnswer, getQuestionById, getAnswersforQuestion } = require("../controllers/question.controller");
 const authMiddleware = require("../middlewares/auth");
 
 const router = express.Router();
@@ -70,6 +70,28 @@ router.post("/:id/answer", authMiddleware, async (req, res) => {
         res.status(200).send({
             message: "Answer Posted Successfully",
             answer,
+        })
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).send({
+            error: "Something went wrong"
+        })
+    }
+
+})
+
+
+router.get("/:id/getAnswers", authMiddleware, async (req, res) => {
+    try {
+        let { currentUser } = req;
+        let { id } = req.params;
+        // console.log(id);
+        let answers = await getAnswersforQuestion(id);
+
+        res.status(200).send({
+            message: "Here are the answers for requested question",
+            answers,
         })
 
     } catch (err) {

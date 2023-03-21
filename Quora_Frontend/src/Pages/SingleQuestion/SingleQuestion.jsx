@@ -5,6 +5,8 @@ import RelatedQuestions from "./RelatedQuestions/RelatedQuestions";
 import { SiAcademia } from "react-icons/si";
 import { AiOutlinePicture } from "react-icons/ai";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
+import { useState } from "react";
+import Post from "../Home/Post/Post";
 import {
   Button,
   useDisclosure,
@@ -17,23 +19,82 @@ import {
   ModalFooter,
   IconButton,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 export default function SingleQuestion() {
   const pathParams = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [answers, setAnswers] = useState([]);
+
+  const [answer, setAnswer] = useState({
+    body: "",
+  });
 
   const data = useSelector((storeData) => {
     return storeData.questions.filter((el) => {
       return el._id === pathParams.id;
     });
   });
-  const question = data[0];
-  console.log(question);
+  const ques = data[0];
+  console.log(ques);
+
+  const [question, setQuestion] = useState(ques);
+
+  useEffect(() => {
+    getAnswers();
+  }, [question]);
+
+  const getAnswers = async () => {
+    let res = await fetch(
+      `http://localhost:8080/questions/${question._id}/getAnswers`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    let data = await res.json();
+    console.log(data);
+    setAnswers(data.answers);
+  };
+
+  const handleChange = (e) => {
+    setAnswer({
+      ...answer,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const postYourAnswer = async () => {
+    // console.log(answer);
+    try {
+      let res = await fetch(
+        `http://localhost:8080/questions/${question._id}/answer`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(answer),
+        }
+      );
+      let data = await res.json();
+      console.log(data);
+      getAnswers();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className={styles.SingleQuestion}>
       <div className={styles.questionDiv}>
-        <h2>{question.title}</h2>
+        <h2>
+          <b>{question.title}</b>
+        </h2>
         <div className={styles.buttonsDiv}>
           <div className={styles.leftButtons}>
             <button onClick={onOpen}>Answer</button>
@@ -65,9 +126,9 @@ export default function SingleQuestion() {
           <button onClick={onOpen}>Answer</button>
         </div>
         <div className={styles.answers}>
-          {question.no_of_answers == 0 ? (
+          {question.no_of_answers === 0 ? (
             <div>
-              <i class="fa-solid fa-pen"></i>
+              <i class="fa-solid fa-pen"></i>&nbsp;&nbsp;&nbsp;
               <span>
                 This question does not have any answers yet. In the meantime we
                 have included some related questions and answers below.
@@ -75,8 +136,14 @@ export default function SingleQuestion() {
             </div>
           ) : (
             <div>
-              <p>Answers</p>
-              All answers will come here
+              <p>Answers ({answers.length})</p>
+              {answers.length > 0 ? (
+                answers.map((el) => {
+                  return <Post key={el._id} postData={el} />;
+                })
+              ) : (
+                <h1>Loading...</h1>
+              )}
             </div>
           )}
         </div>
@@ -84,6 +151,7 @@ export default function SingleQuestion() {
       <RelatedQuestions
         topic={question.topic}
         currentQuestionId={question._id}
+        setQuestion={setQuestion}
       />
 
       <Modal isOpen={isOpen} onClose={onClose} size="2xl">
@@ -110,11 +178,12 @@ export default function SingleQuestion() {
                 <b>{question.title}</b>
               </h3>
               <textarea
-                name="postText"
-                id="postText"
+                name="body"
+                id="body"
                 cols="80"
-                rows="9"
+                rows="8"
                 placeholder="Write your answer"
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className={styles.postTabFooter}>
@@ -132,7 +201,13 @@ export default function SingleQuestion() {
               </div>
               <div>
                 <InfoOutlineIcon />
-                <button className={styles.postButton}>Post</button>
+                <button
+                  className={styles.postButton}
+                  onClick={postYourAnswer}
+                  disabled={answer.body === ""}
+                >
+                  Post
+                </button>
               </div>
             </div>
           </ModalBody>

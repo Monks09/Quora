@@ -1,5 +1,5 @@
 .Post {
-   margin: 20px 0px;
+    margin: 20px 0px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -14,7 +14,7 @@
     padding: 10px;
 }
 
-.authorImage > img {
+.authorImage>img {
     width: 30px;
     border-radius: 50%;
 }
@@ -23,14 +23,25 @@
     font-weight: bold;
 }
 
-.authorDetails > p:last-child {
+.authorDetails>p:last-child {
     font-size: small;
 }
 
-.postContent img{
+.postContent img {
     width: 100%;
 }
 
-.postContent > div {
+.postContent>div {
     padding: 0px 10px;
+}
+
+.postFooter {
+    border-top: 1px solid lightgray;
+    padding: 10px 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.postFooter i {
+    font-size: 20px;
 }

@@ -65,5 +65,10 @@ async function getQuestionById(id) {
     return question;
 }
 
+async function getAnswersforQuestion(id) {
+    let answers = await Answer.find({ "question.quesId": id });
+    return answers;
+}
 
-module.exports = { getAllQuestions, createQuestion, giveAnswer, getQuestionById }
+
+module.exports = { getAllQuestions, createQuestion, giveAnswer, getQuestionById, getAnswersforQuestion }

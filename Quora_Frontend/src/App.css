@@ -6,4 +6,6 @@
 .App {
     background-color: rgb(241, 242, 242);
     min-height: 100vh;
+    padding-bottom: 50px;
+    position: relative;
 }
