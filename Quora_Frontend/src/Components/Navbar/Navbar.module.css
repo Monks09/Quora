@@ -57,3 +57,10 @@
     padding: 5px 10px;
     border-radius: 18px;
 }
+
+.popoverDiv {
+    width: 100px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+}

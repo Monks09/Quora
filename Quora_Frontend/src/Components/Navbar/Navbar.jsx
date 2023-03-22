@@ -1,12 +1,31 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverHeader,
+  PopoverBody,
+  Button,
+} from "@chakra-ui/react";
+import { logoutUserThunkActionCreator } from "../../Redux/Actions/loginAction";
 
 function Navbar(props) {
   let user = useSelector((data) => {
     return data.loggedInUser;
   });
+
+  const dispatch = useDispatch();
+  
+  const navigate = useNavigate();
+
+  const logoutUser = () => {
+    dispatch(logoutUserThunkActionCreator(navigate));
+  };
 
   return (
     <div className={styles.Navbar}>
@@ -62,11 +81,24 @@ function Navbar(props) {
           placeholder="Search Quora"
         />
         <button id={styles.quora_plus_button}>Try Quora+</button>
-        <img
-          className={styles.userImage}
-          src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
-          alt="user-pic"
-        />
+        <Popover>
+          <PopoverTrigger>
+            <img
+              className={styles.userImage}
+              src={user.avatar}
+              alt="user-pic"
+            />
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverHeader>Hi, {user.name}</PopoverHeader>
+            <PopoverBody>
+              <Button onClick={logoutUser}>Logout</Button>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
+
         <img
           src="navbar-icons/language-icon.svg"
           alt="language"

@@ -16,10 +16,15 @@ export default function reducer(state = initialState, { type, payload }) {
                 ...state,
                 questions: payload,
             }
-        case "LOGIN_USER":
+        case "SET_LOGGED_IN_USER":
             return {
                 ...state,
                 loggedInUser: payload,
+            }
+        case "LOGOUT_USER":
+            return {
+                ...state,
+                loggedInUser: null,
             }
         default:
             return state;

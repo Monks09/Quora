@@ -30,6 +30,10 @@ export default function SingleQuestion() {
     body: "",
   });
 
+  const user = useSelector((store) => {
+    return store.loggedInUser;
+  });
+
   const data = useSelector((storeData) => {
     return storeData.questions.filter((el) => {
       return el._id === pathParams.id;
@@ -117,11 +121,8 @@ export default function SingleQuestion() {
           </div>
         </div>
         <div className={styles.innerDiv}>
-          <img
-            src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
-            alt="user-avatar"
-          />
-          <p>Mayank, can you answer this question?</p>
+          <img src={user.avatar} alt="user-avatar" />
+          <p>{user.name.split(" ")[0]}, can you answer this question?</p>
           <p>People are searching for an answer to this question.</p>
           <button onClick={onOpen}>Answer</button>
         </div>
@@ -161,14 +162,11 @@ export default function SingleQuestion() {
           <ModalBody mt="50px">
             <div className={styles.userDiv}>
               <div>
-                <img
-                  src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
-                  alt="user"
-                />
+                <img src={user.avatar} alt="user" />
               </div>
               <div>
                 <p>
-                  <b>Mayank Sharma</b>
+                  <b>{user.name}</b>
                 </p>
                 <button>Choose credential &gt;</button>
               </div>

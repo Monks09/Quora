@@ -14,9 +14,10 @@ import {
   ModalFooter,
   Input,
 } from "@chakra-ui/react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   loginThunkActionCreator,
+  setLoggedInUserThunkActionCreator,
   signupThunkActionCreator,
 } from "../../Redux/Actions/loginAction";
 
@@ -56,8 +57,7 @@ export default function Login() {
   };
 
   let loginUser = async () => {
-    dispatch(loginThunkActionCreator(loginData));
-    navigate("/");
+    dispatch(loginThunkActionCreator(loginData, navigate));
   };
 
   return (

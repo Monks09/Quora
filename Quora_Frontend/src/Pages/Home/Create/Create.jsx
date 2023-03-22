@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { SiAcademia } from "react-icons/si";
 import { AiOutlinePicture } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   Button,
@@ -33,6 +33,10 @@ export default function Create() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const user = useSelector((store)=>{
+    return store.loggedInUser;
+  })
 
   const quesDefault = {
     quesTitle: "",
@@ -89,7 +93,7 @@ export default function Create() {
     <div className={styles.Create}>
       <div>
         <img
-          src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
+          src={user.avatar}
           alt="user-img"
         />
         <button
@@ -155,7 +159,7 @@ export default function Create() {
                   <div className={styles.writeQuestionDiv}>
                     <div>
                       <img
-                        src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
+                        src={user.avatar}
                         alt="user-pic"
                       />
                       <i class="fa-solid fa-caret-right"></i>
@@ -208,13 +212,13 @@ export default function Create() {
                   <div className={styles.userDiv}>
                     <div>
                       <img
-                        src="https://ca.slack-edge.com/T03BHDQT1GT-U03E83063EF-eca94e08ed07-512"
+                        src={user.avatar}
                         alt="user"
                       />
                     </div>
                     <div>
                       <p>
-                        <b>Mayank Sharma</b>
+                        <b>{user.name}</b>
                       </p>
                       <button>Choose credential &gt;</button>
                     </div>

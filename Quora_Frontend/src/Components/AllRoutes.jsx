@@ -8,19 +8,12 @@ import PrivateRoute from "./PrivateRoute";
 import Login from "../Pages/Login/Login";
 import SingleQuestion from "../Pages/SingleQuestion/SingleQuestion";
 import PostAnswer from "../Pages/PostAnswer/PostAnswer";
+import Auth from "./Auth";
 
 function AllRoutes(props) {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route
-        path="/"
-        element={
-          <PrivateRoute>
-            <Home />
-          </PrivateRoute>
-        }
-      />
+      <Route path="/" element={<Auth />} />
       <Route
         path="/post/:id"
         element={
