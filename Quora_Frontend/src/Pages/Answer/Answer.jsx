@@ -1,7 +1,7 @@
 import styles from "./Answer.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Question from "./Question/Question";
+import Question from "../../Components/Answer/Question/Question";
 import { getQuestionsThunkActionCreator } from "../../Redux/Actions/answerThunkAction";
 
 export default function Answer() {
@@ -12,7 +12,7 @@ export default function Answer() {
 
   useEffect(() => {
     dispatch(getQuestionsThunkActionCreator());
-  },[]);
+  }, []);
 
   return (
     <div className={styles.Answer}>

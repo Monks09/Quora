@@ -1,12 +1,12 @@
 import styles from "./SingleQuestion.module.css";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import RelatedQuestions from "./RelatedQuestions/RelatedQuestions";
+import RelatedQuestions from "../../Components/SingleQuestion/RelatedQuestions/RelatedQuestions";
 import { SiAcademia } from "react-icons/si";
 import { AiOutlinePicture } from "react-icons/ai";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { useState } from "react";
-import Post from "../Home/Post/Post";
+import Post from "../../Components/Home/Post/Post";
 import {
   Button,
   useDisclosure,
@@ -121,7 +121,10 @@ export default function SingleQuestion() {
           </div>
         </div>
         <div className={styles.innerDiv}>
-          <img src={user.avatar} alt="user-avatar" />
+          <img
+            src={user.avatar ? user.avatar : "dummy-avatar.jpeg"}
+            alt="user-avatar"
+          />
           <p>{user.name.split(" ")[0]}, can you answer this question?</p>
           <p>People are searching for an answer to this question.</p>
           <button onClick={onOpen}>Answer</button>
@@ -162,7 +165,10 @@ export default function SingleQuestion() {
           <ModalBody mt="50px">
             <div className={styles.userDiv}>
               <div>
-                <img src={user.avatar} alt="user" />
+                <img
+                  src={user.avatar ? user.avatar : "dummy-avatar.jpeg"}
+                  alt="user"
+                />
               </div>
               <div>
                 <p>

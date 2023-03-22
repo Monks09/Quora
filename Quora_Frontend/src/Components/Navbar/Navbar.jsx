@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Navbar.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Popover,
@@ -15,16 +15,14 @@ import {
 import { logoutUserThunkActionCreator } from "../../Redux/Actions/loginAction";
 
 function Navbar(props) {
-  let user = useSelector((data) => {
-    return data.loggedInUser;
+  const user = useSelector((store) => {
+    return store.loggedInUser;
   });
 
   const dispatch = useDispatch();
-  
-  const navigate = useNavigate();
 
   const logoutUser = () => {
-    dispatch(logoutUserThunkActionCreator(navigate));
+    dispatch(logoutUserThunkActionCreator());
   };
 
   return (
@@ -85,7 +83,7 @@ function Navbar(props) {
           <PopoverTrigger>
             <img
               className={styles.userImage}
-              src={user.avatar}
+              src={user.avatar ? user.avatar : "dummy-avatar.jpeg"}
               alt="user-pic"
             />
           </PopoverTrigger>

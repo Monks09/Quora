@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Post from "../Home/Post/Post";
+import Post from "../../Components/Home/Post/Post";
 import styles from "./PostAnswer.module.css";
 
 function PostAnswer() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Post from "../Home/Post/Post";
+import Post from "../../Pages/Home/Post/Post";
 function Main() {
   const data = useSelector((storeData) => {
     return storeData.content;

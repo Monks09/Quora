@@ -9,11 +9,11 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import MidFollowingList from "./MidFollowingList";
-import Followers from "./Followers";
+import MidFollowingList from "../../Components/Following/MidFollowingList";
+import Followers from "../../Components/Following/Followers";
 import { Follower } from "../../Api/Url";
-import Sidebar from "../Home/Sidebar/Sidebar";
-import Ads from "../Home/Ads/Ads";
+import Sidebar from "../../Components/Home/Sidebar/Sidebar";
+import Ads from "../../Components/Home/Ads/Ads";
 
 function Following(props) {
   const [State, setState] = useState([]);

@@ -93,7 +93,7 @@ export default function Create() {
     <div className={styles.Create}>
       <div>
         <img
-          src={user.avatar}
+          src={user.avatar ? user.avatar : "dummy-avatar.jpeg"}
           alt="user-img"
         />
         <button
@@ -159,7 +159,7 @@ export default function Create() {
                   <div className={styles.writeQuestionDiv}>
                     <div>
                       <img
-                        src={user.avatar}
+                        src={user.avatar ? user.avatar : "dummy-avatar.jpeg"}
                         alt="user-pic"
                       />
                       <i class="fa-solid fa-caret-right"></i>
@@ -212,7 +212,7 @@ export default function Create() {
                   <div className={styles.userDiv}>
                     <div>
                       <img
-                        src={user.avatar}
+                        src={user.avatar ? user.avatar : "dummy-avatar.jpeg"}
                         alt="user"
                       />
                     </div>

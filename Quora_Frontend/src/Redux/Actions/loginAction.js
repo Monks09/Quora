@@ -56,7 +56,7 @@ export const setLoggedInUserThunkActionCreator = (user) => {
     }
 }
 
-export const logoutUserThunkActionCreator = (navigate) => {
+export const logoutUserThunkActionCreator = () => {
     return (dispatch, getState) => {
         // clearing user data from local storage
         localStorage.removeItem("token");

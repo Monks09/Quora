@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
-import Create from "./Create/Create";
+import Create from "../../Components/Home/Create/Create";
 import { useDispatch, useSelector } from "react-redux";
 import { getContentThunkActionCreator } from "../../Redux/Actions/homeAction";
-import Post from "./Post/Post";
-import Sidebar from "./Sidebar/Sidebar";
-import Ads from "./Ads/Ads";
-import { setLoggedInUserThunkActionCreator } from "../../Redux/Actions/loginAction";
+import Post from "../../Components/Home/Post/Post";
+import Sidebar from "../../Components/Home/Sidebar/Sidebar";
+import Ads from "../../Components/Home/Ads/Ads";
 
 function Home(props) {
   const [loading, setLoading] = useState(true);
