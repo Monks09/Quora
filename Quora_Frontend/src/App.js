@@ -1,15 +1,11 @@
 import "./App.css";
 import AllRoutes from "./Components/AllRoutes";
 import Navbar from "./Components/Navbar/Navbar";
-import { useSelector } from "react-redux";
-function App() {
-  const user = useSelector((store) => {
-    return store.loggedInUser;
-  });
 
+function App() {
   return (
     <div className="App">
-      {user ? <Navbar /> : null}
+      <Navbar />
       <AllRoutes />
     </div>
   );

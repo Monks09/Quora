@@ -1,6 +1,6 @@
-export const getContentThunkActionCreator = () => {
+export const getContentThunkActionCreator = (page) => {
     return (dispatch, getState) => {
-        fetch(`http://localhost:8080/content`, {
+        fetch(`http://localhost:8080/content?page=${page}&limit=3`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

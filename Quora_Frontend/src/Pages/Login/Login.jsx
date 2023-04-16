@@ -1,6 +1,5 @@
 import styles from "./Login.module.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import {
   Button,
@@ -17,7 +16,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import {
   loginThunkActionCreator,
-  setLoggedInUserThunkActionCreator,
+  setUserThunkActionCreator,
   signupThunkActionCreator,
 } from "../../Redux/Actions/loginAction";
 
@@ -34,8 +33,9 @@ export default function Login() {
     login_password: "",
   });
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+
+ 
 
   const handleChange = (e) => {
     setSignupData({
@@ -57,7 +57,7 @@ export default function Login() {
   };
 
   let loginUser = async () => {
-    dispatch(loginThunkActionCreator(loginData, navigate));
+    dispatch(loginThunkActionCreator(loginData));
   };
 
   return (

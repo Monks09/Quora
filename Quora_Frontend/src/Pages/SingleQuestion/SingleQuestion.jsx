@@ -30,9 +30,7 @@ export default function SingleQuestion() {
     body: "",
   });
 
-  const user = useSelector((store) => {
-    return store.loggedInUser;
-  });
+  const user = JSON.parse(localStorage.getItem("user")) || null;
 
   const data = useSelector((storeData) => {
     return storeData.questions.filter((el) => {

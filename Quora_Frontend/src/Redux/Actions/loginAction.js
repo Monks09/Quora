@@ -19,7 +19,7 @@ export const signupThunkActionCreator = (signupData) => {
 }
 
 
-export const loginThunkActionCreator = (loginData, navigate) => {
+export const loginThunkActionCreator = (loginData) => {
     return async (dispatch, getState) => {
         try {
             let userData = {
@@ -38,21 +38,14 @@ export const loginThunkActionCreator = (loginData, navigate) => {
             let data = await res.json();
             localStorage.setItem("token", data.data.token);
             localStorage.setItem("user", JSON.stringify(data.data.user));
-            dispatch(setLoggedInUserThunkActionCreator(data.data.user));
+            dispatch({
+                type: "LOGIN_USER",
+                payload: data.data.user,
+            })
         } catch (err) {
             console.log(err);
             alert("Login failed");
         }
-    }
-}
-
-
-export const setLoggedInUserThunkActionCreator = (user) => {
-    return async (dispatch, getState) => {
-        dispatch({
-            type: "SET_LOGGED_IN_USER",
-            payload: user,
-        })
     }
 }
 
@@ -64,6 +57,15 @@ export const logoutUserThunkActionCreator = () => {
         // clearing the user data from redux store
         dispatch({
             type: "LOGOUT_USER"
+        })
+    }
+}
+
+export const setUserThunkActionCreator = (userData) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: "LOGIN_USER",
+            payload: userData,
         })
     }
 }

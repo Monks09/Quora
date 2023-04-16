@@ -34,9 +34,7 @@ export default function Create() {
 
   const navigate = useNavigate();
 
-  const user = useSelector((store)=>{
-    return store.loggedInUser;
-  })
+  const user = JSON.parse(localStorage.getItem("user")) || null;
 
   const quesDefault = {
     quesTitle: "",

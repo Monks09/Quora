@@ -9,14 +9,14 @@ export default function reducer(state = initialState, { type, payload }) {
         case "GET_CONTENT":
             return {
                 ...state,
-                content: payload,
+                content: [...state.content, ...payload],
             }
         case "GET_QUESTIONS":
             return {
                 ...state,
                 questions: payload,
             }
-        case "SET_LOGGED_IN_USER":
+        case "LOGIN_USER":
             return {
                 ...state,
                 loggedInUser: payload,

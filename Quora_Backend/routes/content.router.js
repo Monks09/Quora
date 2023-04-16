@@ -6,7 +6,11 @@ const router = express.Router();
 
 router.get("/", authMiddleware, async (req, res) => {
     try {
-        let content = await getContent();
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 3;
+        const offset = (page - 1) * limit;
+
+        let content = await getContent(limit, offset);
         res.status(200).send({
             message: "Here is your content",
             content,

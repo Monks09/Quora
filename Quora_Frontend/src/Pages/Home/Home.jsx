@@ -6,13 +6,19 @@ import { getContentThunkActionCreator } from "../../Redux/Actions/homeAction";
 import Post from "../../Components/Home/Post/Post";
 import Sidebar from "../../Components/Home/Sidebar/Sidebar";
 import Ads from "../../Components/Home/Ads/Ads";
+import { Spinner } from "@chakra-ui/react";
 
 function Home(props) {
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getContentThunkActionCreator());
+    dispatch(getContentThunkActionCreator(page));
     setLoading(false);
+  }, [page]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleInfiniteScroll);
   }, []);
 
   const content = useSelector((data) => {
@@ -20,18 +26,43 @@ function Home(props) {
   });
   console.log(content);
 
+  const handleInfiniteScroll = () => {
+    if (
+      window.innerHeight + Math.ceil(document.documentElement.scrollTop) >=
+      document.documentElement.scrollHeight
+    ) {
+      setLoading(true);
+      setTimeout(() => {
+        setPage((prev) => prev + 1);
+      }, 1000);
+    }
+  };
+
   return (
     <div className={styles.Home}>
       <Sidebar />
       <div className={styles.main}>
         <Create />
         <div className={styles.contentDiv}>
-          {content.length > 0 ? (
+          {content.length > 0 &&
             content.map((el) => {
               return <Post key={el._id} postData={el} />;
-            })
-          ) : (
-            <h1>Loading...</h1>
+            })}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {loading && (
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="blue.500"
+              size="xl"
+            />
           )}
         </div>
       </div>
