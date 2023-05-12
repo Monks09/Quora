@@ -9,9 +9,6 @@ let topics = [
         name: "Health"
     },
     {
-        name: "Fitness"
-    },
-    {
         name: "Movies"
     },
     {
@@ -19,12 +16,6 @@ let topics = [
     },
     {
         name: "Technology"
-    },
-    {
-        name: "General Knowledge"
-    },
-    {
-        name: "Geography"
     },
     {
         name: "Sports"

@@ -5,7 +5,11 @@ const QuestionSchema = new mongoose.Schema(
         title: { type: String, required: true },
         topic: { type: String, required: true },
         author: {
-            userId: { type: String, required: true },
+            userId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+                required: true,
+            },
             name: { type: String, required: true },
             avatar: { type: String, required: false },
         },

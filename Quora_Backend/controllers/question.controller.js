@@ -1,6 +1,7 @@
-const Answer = require("../models/answer.model");
 const Question = require("../models/question.model");
 const User = require("../models/user.model");
+const Post = require("../models/post.model");
+
 
 async function getAllQuestions() {
     let questions = await Question.find();
@@ -36,7 +37,7 @@ async function giveAnswer({ body, image }, id, author) {
 
     await Question.findByIdAndUpdate(id, updateData, { new: true });
 
-    let newAnswer = {
+    let answer = {
         body,
         image,
         question: {
@@ -56,8 +57,8 @@ async function giveAnswer({ body, image }, id, author) {
         shares: 0,
     }
 
-    let answer = await Answer.create(newAnswer);
-    return answer;
+    let post = await Post.create(answer);
+    return post;
 }
 
 async function getQuestionById(id) {
@@ -66,7 +67,7 @@ async function getQuestionById(id) {
 }
 
 async function getAnswersforQuestion(id) {
-    let answers = await Answer.find({ "question.quesId": id });
+    let answers = await Post.find({ "question.quesId": id });
     return answers;
 }
 

@@ -26,8 +26,8 @@ async function createPost({ body, image, topic }, author) {
     return post;
 }
 
-async function getAllPosts() {
-    let posts = await Post.find();
+async function getAllPosts(limit, offset) {
+    let posts = Post.find().skip(offset).limit(limit);
     return posts;
 }
 

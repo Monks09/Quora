@@ -6,18 +6,19 @@ const router = express.Router();
 
 router.get("/", authMiddleware, async (req, res) => {
     try {
-        let posts = await getAllPosts();
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 3;
+        const offset = (page - 1) * limit;
 
+        let posts = await getAllPosts(limit, offset);
         res.status(200).send({
-            message: "Here are the posts",
+            message: "Here is your content",
             posts,
-        })
-
-    } catch (err) {
+        });
+    }
+    catch (err) {
         console.log(err);
-        res.status(500).send({
-            error: "Something went wrong"
-        })
+        res.status(500).send("Something went wrong");
     }
 
 

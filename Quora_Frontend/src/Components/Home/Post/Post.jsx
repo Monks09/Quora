@@ -32,7 +32,9 @@ function Post({ postData }) {
         <div>
           <p>
             <b>
-              <Link to={`/post/${postData._id}`}>{question.title}</Link>
+              {question && (
+                <Link to={`/post/${postData._id}`}>{question.title}</Link>
+              )}
             </b>
           </p>
           <ReadMoreReadLess>{body}</ReadMoreReadLess>

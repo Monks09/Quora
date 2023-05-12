@@ -23,7 +23,10 @@ import {
   Input,
   IconButton,
 } from "@chakra-ui/react";
-import { addNewPostThunkActionCreator, addNewQuestionThunkActionCreator } from "../../../Redux/Actions/createAction";
+import {
+  addNewPostThunkActionCreator,
+  addNewQuestionThunkActionCreator,
+} from "../../../Redux/Actions/createAction";
 
 export default function Create() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -178,21 +181,9 @@ export default function Create() {
                         <option value="">Select Topic</option>
                         <option value="Science">Science</option>
                         <option value="Health">Health</option>
-                        <option value="Fitness">Fitness</option>
                         <option value="Movies">Movies</option>
                         <option value="Technology">Technology</option>
-                        <option value="Geography">Geography</option>
-                        <option value="History">History</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="General Knowledge">
-                          General Knowledge
-                        </option>
-                        <option value="Psychology">Psychology</option>
                         <option value="Sports">Sports</option>
-                        <option value="Music">Music</option>
-                        <option value="Self Development">
-                          Self Development
-                        </option>
                       </select>
                     </div>
                   </div>
@@ -234,19 +225,9 @@ export default function Create() {
                       <option value="">Select Topic</option>
                       <option value="Science">Science</option>
                       <option value="Health">Health</option>
-                      <option value="Fitness">Fitness</option>
                       <option value="Movies">Movies</option>
                       <option value="Technology">Technology</option>
-                      <option value="Geography">Geography</option>
-                      <option value="History">History</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="General Knowledge">
-                        General Knowledge
-                      </option>
-                      <option value="Psychology">Psychology</option>
                       <option value="Sports">Sports</option>
-                      <option value="Music">Music</option>
-                      <option value="Self Development">Self Development</option>
                     </select>
                   </div>
                   <div className={styles.postTabFooter}>
