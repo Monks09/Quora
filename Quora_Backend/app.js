@@ -5,6 +5,7 @@ const userRouter = require("./routes/user.routes");
 const postRouter = require("./routes/post.routes");
 const questionRouter = require("./routes/question.routes");
 const followingRouter = require("./routes/following.routes");
+const PORT = process.env.PORT || 3030;
 
 
 const app = express();
@@ -29,7 +30,7 @@ app.get("/", async (req, res) => {
 
 connectToDatabase()
     .then(() => {
-        app.listen(8080, () => {
-            console.log("Server is running at http://localhost:8080");
+        app.listen(PORT, () => {
+            console.log(`Server started on port ${PORT}`);
         })
     })
