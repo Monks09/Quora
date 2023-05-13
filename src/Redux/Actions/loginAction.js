@@ -1,7 +1,9 @@
+import { api } from "../../Components/api";
+
 export const signupThunkActionCreator = (signupData) => {
     return async (dispatch, getState) => {
         try {
-            let res = await fetch(`http://localhost:8080/users/register`, {
+            let res = await fetch(`${api}/users/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -27,7 +29,7 @@ export const loginThunkActionCreator = (loginData) => {
                 password: loginData.login_password,
             };
 
-            let res = await fetch(`http://localhost:8080/users/login`, {
+            let res = await fetch(`${api}/users/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

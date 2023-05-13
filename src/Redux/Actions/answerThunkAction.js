@@ -1,7 +1,9 @@
+import { api } from "../../Components/api";
+
 export const getQuestionsThunkActionCreator = () => {
 
     return async (dispatch, getState) => {
-        let res = await fetch(`http://localhost:8080/questions`, {
+        let res = await fetch(`${api}/questions`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

@@ -1,6 +1,8 @@
+import { api } from "../../Components/api";
+
 export const getSpacesThunkActionCreator = () => {
     return async (dispatch, getState) => {
-        let res = await fetch(`http://localhost:8080/following`, {
+        let res = await fetch(`${api}/following`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

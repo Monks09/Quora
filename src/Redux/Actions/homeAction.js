@@ -1,6 +1,8 @@
+import { api } from "../../Components/api";
+
 export const getContentThunkActionCreator = (page) => {
     return (dispatch, getState) => {
-        fetch(`http://localhost:8080/posts?page=${page}&limit=3`, {
+        fetch(`${api}/posts?page=${page}&limit=3`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

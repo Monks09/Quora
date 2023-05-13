@@ -1,7 +1,9 @@
+import { api } from "../../Components/api";
+
 export const addNewQuestionThunkActionCreator = (quesData) => {
     return async (dispatch, getState) => {
         try {
-            let res = await fetch(` http://localhost:8080/questions/create`, {
+            let res = await fetch(`${api}/questions/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -21,7 +23,7 @@ export const addNewQuestionThunkActionCreator = (quesData) => {
 export const addNewPostThunkActionCreator = (postData) => {
     return async (dispatch, getState) => {
         try {
-            let res = await fetch(`http://localhost:8080/posts/create`, {
+            let res = await fetch(`${api}/posts/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
