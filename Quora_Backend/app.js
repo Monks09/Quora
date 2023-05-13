@@ -4,6 +4,7 @@ const connectToDatabase = require("./config/db");
 const userRouter = require("./routes/user.routes");
 const postRouter = require("./routes/post.routes");
 const questionRouter = require("./routes/question.routes");
+const followingRouter = require("./routes/following.routes");
 
 
 const app = express();
@@ -17,6 +18,8 @@ app.use("/users", userRouter);
 app.use("/posts", postRouter);
 
 app.use("/questions", questionRouter);
+
+app.use("/following", followingRouter);
 
 
 app.get("/", async (req, res) => {

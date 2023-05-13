@@ -1,6 +1,7 @@
 const initialState = {
     content: [],
     questions: [],
+    spaces: [],
     loggedInUser: null,
 }
 
@@ -15,6 +16,11 @@ export default function reducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 questions: payload,
+            }
+        case "GET_SPACES":
+            return {
+                ...state,
+                spaces: payload,
             }
         case "LOGIN_USER":
             return {

@@ -11,12 +11,16 @@ import {
 } from "@chakra-ui/react";
 import MidFollowingList from "../../Components/Following/MidFollowingList";
 import Followers from "../../Components/Following/Followers";
-import { Follower } from "../../Api/Url";
 import Sidebar from "../../Components/Home/Sidebar/Sidebar";
 import Ads from "../../Components/Home/Ads/Ads";
+import { getSpacesThunkActionCreator } from "../../Redux/Actions/followingAction";
+import { useSelector, useDispatch } from "react-redux";
 
 function Following(props) {
-  const [State, setState] = useState([]);
+  const dispatch = useDispatch();
+  const spaces = useSelector((store) => {
+    return store.spaces;
+  });
 
   // some width changing logic
 
@@ -28,13 +32,8 @@ function Following(props) {
   //   };
   // }, [width]);
 
-  
   useEffect(() => {
-    fetch(Follower).then((res) => {
-      res.json().then((res) => {
-        setState(res);
-      });
-    });
+    dispatch(getSpacesThunkActionCreator());
   }, []);
   return (
     <Grid display={["none", "flex"]} width="85%" margin="20px auto" gap="20px">
@@ -52,8 +51,8 @@ function Following(props) {
           <Text fontSize={"16px"} ml={"100px"} fontStyle={"oblique"}>
             Spaces you might like
           </Text>
-          {State.length > 0 ? (
-            State.map((el) => {
+          {spaces.length > 0 ? (
+            spaces.map((el) => {
               return <Followers data={el} />;
             })
           ) : (
