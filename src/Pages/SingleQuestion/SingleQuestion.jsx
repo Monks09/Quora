@@ -7,6 +7,7 @@ import { AiOutlinePicture } from "react-icons/ai";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import Post from "../../Components/Home/Post/Post";
+import { api } from "../../Components/api";
 import {
   Button,
   useDisclosure,
@@ -47,16 +48,13 @@ export default function SingleQuestion() {
   }, [question]);
 
   const getAnswers = async () => {
-    let res = await fetch(
-      `http://localhost:8080/questions/${question._id}/getAnswers`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
+    let res = await fetch(`${api}/questions/${question._id}/getAnswers`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
     let data = await res.json();
     console.log(data);
     setAnswers(data.answers);
@@ -72,17 +70,14 @@ export default function SingleQuestion() {
   const postYourAnswer = async () => {
     // console.log(answer);
     try {
-      let res = await fetch(
-        `http://localhost:8080/questions/${question._id}/answer`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify(answer),
-        }
-      );
+      let res = await fetch(`${api}/questions/${question._id}/answer`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify(answer),
+      });
       let data = await res.json();
       console.log(data);
       getAnswers();
